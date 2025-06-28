@@ -1,0 +1,73 @@
+[
+  {
+    "id": 1,
+    "title": "Idea Canvas",
+    "images": [
+      "/src/assets/images/a-11-image-1.PNG",
+      "/src/assets/images/a-11-image-2.PNG",
+      "/src/assets/images/a-11-image-3.PNG"
+    ],
+    "description": "A dynamic and interactive platform designed to visually organize, manage, and expand creative ideas or project concepts. Each idea is represented as a card with key details like description, goals, tools, and potential collaborations",
+    "tags": [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Express",
+      "Firebase",
+      "Framer Motion",
+      "Vercel",
+      "Tailwind",
+      "CSS",
+      "Html"
+    ],
+    "githubClient": "https://github.com/SohanurRahman007/assignment-11-polishing",
+    "githubServer": "https://github.com/SohanurRahman007/assignment-11-polishing-server",
+    "webapp": "https://idea-canvas-88aaf.web.app/"
+  },
+  {
+    "id": 2,
+    "title": "Green Connected",
+    "images": [
+      "/src/assets/images/a-10-image-1.PNG",
+      "/src/assets/images/a-10-image-2.PNG",
+      "/src/assets/images/a-10-image-3.PNG"
+    ],
+    "description": "A blog platform where users can read and post gardening tips. Includes full CRUD, authentication, and a responsive UI.",
+    "tags": [
+      "React",
+      "Node.js",
+      "MongoDB",
+      "Express",
+      "Firebase",
+      "Tailwind",
+      "CSS",
+      "Html"
+    ],
+    "githubClient": "https://github.com/Programming-Hero-Web-Course4/b11a10-client-side-sohanpk24",
+    "githubServer": "https://github.com/Programming-Hero-Web-Course4/b11a10-server-side-sohanpk24",
+    "webapp": "https://grow-together-auth.web.app/"
+  },
+  {
+    "id": 3,
+    "title": "Local Vibe",
+    "images": [
+      "/src/assets/images/a-9-image-1.PNG",
+      "/src/assets/images/a-9-image-2.PNG",
+      "/src/assets/images/a-9-image-3.PNG"
+    ],
+    "description": "Local Vibe is a modern frontend web application focused on user authentication and personalized content access. The project showcases seamless login/logout flows, conditional rendering based on user state, and secure client-side routing — all built using modern frontend technologies",
+    "tags": [
+      "React",
+      "Node.js",
+      "Daisy UI",
+      "Mumba UI",
+      "Firebase",
+      "Tailwind",
+      "CSS",
+      "Html"
+    ],
+    "githubClient": "https://github.com/SohanurRahman007/assingnment-9-polishing",
+    "githubServer": "https://github.com/SohanurRahman007/assingnment-9-polishing",
+    "webapp": "https://local-vibe-authentication.web.app/"
+  }
+]

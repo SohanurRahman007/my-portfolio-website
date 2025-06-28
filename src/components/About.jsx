@@ -24,7 +24,7 @@ const About = () => {
       id="about"
       className="min-h-[80vh] px-6 pt-10 bg-gradient-to-tr from-[#f0f0f0] via-white to-[#e0e7ff] dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
     >
-      <h2 className="text-2xl text-3xl font-extrabold text-center mb-2 text-gray-900 dark:text-white tracking-wide">
+      <h2 className="text-2xl md:text-3xl font-extrabold text-center mb-2 text-gray-900 dark:text-white tracking-wide">
         About Me
       </h2>
       <div className="w-24 h-1 bg-indigo-500 mx-auto mt-2"></div>
