@@ -22,7 +22,10 @@ const Navbar = () => {
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         {/* Left - Logo */}
         <div className="text-2xl font-bold text-indigo-600 dark:text-white">
-          MyPortfolio
+          <Link to="/" className="text-2xl font-extrabold tracking-widest">
+            <span className="text-white">Sohan</span>
+            <span className="text-purple-500">.</span>
+          </Link>
         </div>
 
         {/* Center - NavLinks */}
