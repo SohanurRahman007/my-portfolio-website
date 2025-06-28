@@ -35,7 +35,7 @@ const Banner = () => {
             <div className="flex gap-4 text-2xl text-gray-700 dark:text-white mt-2">
               <motion.a
                 whileHover={{ scale: 1.2 }}
-                href="https://github.com/yourgithub"
+                href="https://github.com/SohanurRahman007"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -43,7 +43,7 @@ const Banner = () => {
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.2 }}
-                href="https://linkedin.com/in/yourlinkedin"
+                href="https://www.linkedin.com/in/sohanur-rahman-4b4285333/"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -51,7 +51,7 @@ const Banner = () => {
               </motion.a>
               <motion.a
                 whileHover={{ scale: 1.2 }}
-                href="https://facebook.com/yourfacebook"
+                href="https://www.facebook.com/profile.php?id=100080957303185"
                 target="_blank"
                 rel="noopener noreferrer"
               >
