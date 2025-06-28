@@ -3,9 +3,9 @@
     "id": 1,
     "title": "Idea Canvas",
     "images": [
-      "/src/assets/images/a-11-image-1.PNG",
-      "/src/assets/images/a-11-image-2.PNG",
-      "/src/assets/images/a-11-image-3.PNG"
+      "https://i.ibb.co/dsXd21rV/a-9-image-1.png",
+      "https://i.ibb.co/9ksJG5Tf/a-9-image-2.png",
+      "https://i.ibb.co/cKsJ8BGb/a-9-image-3.png"
     ],
     "description": "A dynamic and interactive platform designed to visually organize, manage, and expand creative ideas or project concepts. Each idea is represented as a card with key details like description, goals, tools, and potential collaborations",
     "tags": [
@@ -28,9 +28,9 @@
     "id": 2,
     "title": "Green Connected",
     "images": [
-      "/src/assets/images/a-10-image-1.PNG",
-      "/src/assets/images/a-10-image-2.PNG",
-      "/src/assets/images/a-10-image-3.PNG"
+      "https://i.ibb.co/NdkVW3rd/a-10-image-1.png",
+      " https://i.ibb.co/yntgxr6B/a-10-image-2.png",
+      "https://i.ibb.co/v49wRqH1/a-10-image-3.png"
     ],
     "description": "A blog platform where users can read and post gardening tips. Includes full CRUD, authentication, and a responsive UI.",
     "tags": [
@@ -51,9 +51,9 @@
     "id": 3,
     "title": "Local Vibe",
     "images": [
-      "/src/assets/images/a-9-image-1.PNG",
-      "/src/assets/images/a-9-image-2.PNG",
-      "/src/assets/images/a-9-image-3.PNG"
+      "https://i.ibb.co/wrxwz9Xn/a-11-image-1.png",
+      "https://i.ibb.co/QjJgbsKk/a-11-image-2.png",
+      "https://i.ibb.co/jPTcjvKv/a-11-image-3.png"
     ],
     "description": "Local Vibe is a modern frontend web application focused on user authentication and personalized content access. The project showcases seamless login/logout flows, conditional rendering based on user state, and secure client-side routing — all built using modern frontend technologies",
     "tags": [
