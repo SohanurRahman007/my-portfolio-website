@@ -7,18 +7,22 @@ import Education from "../components/Education";
 import Contact from "../components/Contact";
 import Projects from "../components/Projects";
 import Footer from "../components/Footer";
-
+import AnimatedBackground from "../components/AnimatedBackground";
 const Home = () => {
   return (
-    <div>
-      <Navbar></Navbar>
-      <Banner></Banner>
-      <About></About>
-      <Skills></Skills>
-      <Education></Education>
-      <Projects></Projects>
-      <Contact></Contact>
-      <Footer></Footer>
+    <div className="relative min-h-screen">
+      <AnimatedBackground />
+
+      <div className="relative z-10">
+        <Navbar />
+        <Banner />
+        <About />
+        <Skills />
+        <Education />
+        <Projects />
+        <Contact />
+        <Footer />
+      </div>
     </div>
   );
 };

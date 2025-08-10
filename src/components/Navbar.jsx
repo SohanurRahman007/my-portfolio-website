@@ -1,36 +1,64 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-scroll";
-import { FaBars, FaTimes, FaMoon, FaSun, FaDownload } from "react-icons/fa";
 import { motion } from "framer-motion";
+import {
+  FaBars,
+  FaTimes,
+  FaDownload,
+  FaHome,
+  FaGraduationCap,
+  FaLaptopCode,
+  FaCode,
+} from "react-icons/fa";
+
+const navLinks = [
+  { id: 1, name: "Home", to: "home", icon: FaHome },
+  { id: 2, name: "Skills", to: "skills", icon: FaCode },
+  { id: 3, name: "Education", to: "education", icon: FaGraduationCap },
+  { id: 4, name: "Projects", to: "projects", icon: FaLaptopCode },
+];
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
-  const navLinks = [
-    { id: 3, name: "Skills", to: "skills" },
-    { id: 4, name: "Education", to: "education" },
-    { id: 5, name: "Projects", to: "projects" },
-  ];
+  // Change navbar style on scroll
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <motion.nav
-      initial={{ y: -80, opacity: 0 }}
+      initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ type: "spring", stiffness: 70 }}
-      className="fixed top-0 w-full z-50 bg-white dark:bg-gray-900 shadow-md"
+      transition={{ type: "spring", stiffness: 100 }}
+      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md"
+          : "bg-transparent"
+      }`}
     >
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
-        {/* Left - Logo */}
-        <div className="text-2xl font-bold text-indigo-600 dark:text-white">
-          <Link to="/" className="text-2xl font-extrabold tracking-widest">
-            <span className="text-white">Sohan</span>
-            <span className="text-purple-500">.</span>
-          </Link>
-        </div>
+        {/* Logo */}
+        <Link
+          to="home"
+          spy={true}
+          smooth={true}
+          duration={500}
+          className="cursor-pointer flex items-center gap-2"
+        >
+          <img
+            className="h-10"
+            src="https://i.ibb.co.com/Hf4yzSfh/Brown-Creative-Elegant-Studio-Photo-Logo-1-removebg-preview.png"
+            alt="Logo"
+          />
+        </Link>
 
-        {/* Center - NavLinks */}
+        {/* Desktop Menu */}
         <ul className="hidden md:flex gap-8 text-gray-700 dark:text-gray-200 font-medium">
-          {navLinks.map(({ id, name, to }) => (
+          {navLinks.map(({ id, name, to, icon: Icon }) => (
             <li key={id}>
               <Link
                 to={to}
@@ -38,30 +66,32 @@ const Navbar = () => {
                 smooth={true}
                 offset={-70}
                 duration={500}
-                className="cursor-pointer hover:text-indigo-600 transition"
+                className="cursor-pointer hover:text-indigo-600 transition flex items-center gap-2"
               >
+                <Icon className="text-xl" />
                 {name}
               </Link>
             </li>
           ))}
         </ul>
 
-        {/* Right - Resume + Theme */}
-        <div className="hidden md:flex items-center gap-4">
+        {/* Actions */}
+        <div className="flex items-center gap-4">
+          {/* Resume Button */}
           <a
-            href="/resume.pdf"
-            download
-            className="px-3 py-1.5 bg-indigo-600 text-white rounded hover:bg-indigo-700 transition flex items-center gap-1"
+            href="https://drive.google.com/file/d/1GJNwcoBlDqkboGTVN1PcrNKu0iJGf0GR/view"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hidden md:flex px-4 py-2 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition items-center gap-2 shadow"
           >
-            <FaDownload /> Resume
+            <FaDownload />
+            Resume
           </a>
-        </div>
 
-        {/* Mobile Hamburger */}
-        <div className="md:hidden">
+          {/* Mobile Menu Button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="text-2xl text-gray-700 dark:text-white"
+            className="text-2xl text-gray-700 dark:text-white md:hidden"
           >
             {menuOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -70,8 +100,13 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       {menuOpen && (
-        <ul className="md:hidden px-6 py-4 bg-white dark:bg-gray-900 border-t shadow flex flex-col gap-4">
-          {navLinks.map(({ id, name, to }) => (
+        <motion.ul
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.2 }}
+          className="md:hidden px-6 py-4 bg-white dark:bg-gray-900 border-t shadow flex flex-col gap-4"
+        >
+          {navLinks.map(({ id, name, to, icon: Icon }) => (
             <li key={id}>
               <Link
                 to={to}
@@ -80,25 +115,26 @@ const Navbar = () => {
                 offset={-70}
                 duration={500}
                 onClick={() => setMenuOpen(false)}
-                className="block text-gray-700 dark:text-white font-medium hover:text-indigo-600"
+                className="block text-gray-700 dark:text-white font-medium hover:text-indigo-600 transition flex items-center gap-2"
               >
+                <Icon className="text-xl" />
                 {name}
               </Link>
             </li>
           ))}
-
-          {/* Resume */}
           <li>
             <a
-              href="/resume.pdf"
-              download
-              className="block text-indigo-600 dark:text-indigo-400  font-medium"
+              href="https://drive.google.com/file/d/1GJNwcoBlDqkboGTVN1PcrNKu0iJGf0GR/view"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setMenuOpen(false)}
+              className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-medium hover:text-indigo-800 transition"
             >
-              <FaDownload className="inline mr-1" />
-              Download Resume
+              <FaDownload />
+              Resume
             </a>
           </li>
-        </ul>
+        </motion.ul>
       )}
     </motion.nav>
   );
