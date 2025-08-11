@@ -21,7 +21,7 @@ const cardData = [
 
 const About = () => {
   return (
-    <section id="about" className="py-10 px-4">
+    <section id="about" className="pt-10 px-4">
       <h2 className="text-2xl md:text-3xl font-extrabold text-center mb-2 text-gray-900 dark:text-white tracking-wide">
         About Me
       </h2>
@@ -29,7 +29,7 @@ const About = () => {
       <p className="text-gray-600 dark:text-gray-300 mt-2 text-lg max-w-xl mx-auto text-center">
         I enjoy every part of the development process.
       </p>
-      <div className="max-w-7xl mt-4 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
+      <div className="max-w-7xl mt-4 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
         {cardData.map(({ title, content }, index) => (
           <motion.div
             key={index}

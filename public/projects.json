@@ -1,73 +1,78 @@
 [
   {
     "id": 1,
+    "title": "FitSphere",
+    "images": [
+      "https://i.ibb.co.com/wTVNQvB/fitness-1.png",
+      "https://i.ibb.co.com/8gMqXsnB/fitness-2.png",
+      "https://i.ibb.co.com/hx3xZYcB/fitness-3.png",
+      "https://i.ibb.co.com/VWb9kZFJ/fitness-4.png",
+      "https://i.ibb.co.com/8LDY6bxk/fitness-5.png",
+      "https://i.ibb.co.com/hRRB7BqW/fitness-6.png",
+      "https://i.ibb.co.com/ZpPgdzRX/fitness-7.png"
+    ],
+    "description": "FitSphere is a role-based fitness tracking web application that connects Admins, Trainers, and Members on a single platform. It enables trainer bookings, class management, forum discussions, activity tracking, and online payments — designed with a professional dashboard for each role.",
+    "tags": [
+      "React",
+      "Node.js",
+      "Tailwind.css",
+      "Firebase",
+      "Stripe",
+      "jwt",
+      "MongoDB",
+      "Express.js"
+    ],
+    "githubClient": "https://github.com/SohanurRahman007/assingnment-9-polishing",
+    "githubServer": "https://github.com/SohanurRahman007/assingnment-9-polishing",
+    "webapp": "https://fitsphere-e30b9.web.app/"
+  },
+
+  {
+    "id": 2,
     "title": "Idea Canvas",
     "images": [
-      "https://i.ibb.co/dsXd21rV/a-9-image-1.png",
-      "https://i.ibb.co/9ksJG5Tf/a-9-image-2.png",
-      "https://i.ibb.co/cKsJ8BGb/a-9-image-3.png"
+      " https://i.ibb.co.com/gLS7FZRK/idea-1.png",
+      "https://i.ibb.co.com/3mGNGtNx/idea-2.png",
+      "https://i.ibb.co.com/0yWM1CHB/idea-3.png",
+      "https://i.ibb.co.com/HLPLMj5H/idea-5.png",
+      "https://i.ibb.co.com/J47SJPQ/idea-4.png",
+      "https://i.ibb.co.com/RpjbLQbS/idea-6.png"
     ],
-    "description": "A dynamic and interactive platform designed to visually organize, manage, and expand creative ideas or project concepts. Each idea is represented as a card with key details like description, goals, tools, and potential collaborations",
+
+    "description": "This dynamic platform is designed for visually organizing and managing creative ideas. It allows users to perform CRUD operations on idea cards, which include details, goals, and collaboration notes. A secure commenting system and JSON Web Tokens (JWT) ensure a safe and collaborative environment for all users.",
     "tags": [
       "React",
       "Node.js",
       "MongoDB",
-      "Express",
+      "Express.js",
       "Firebase",
       "Framer Motion",
-      "Vercel",
-      "Tailwind",
-      "CSS",
-      "Html"
+      "Tailwind.css"
     ],
     "githubClient": "https://github.com/SohanurRahman007/assignment-11-polishing",
-    "githubServer": "https://github.com/SohanurRahman007/assignment-11-polishing-server",
+    "githubServer": "https://github.com/SohanurRahman007/assignment-11-idea-canvas-server-polishing-new",
     "webapp": "https://idea-canvas-88aaf.web.app/"
   },
+
   {
-    "id": 2,
+    "id": 3,
     "title": "Green Connected",
     "images": [
       "https://i.ibb.co/NdkVW3rd/a-10-image-1.png",
       " https://i.ibb.co/yntgxr6B/a-10-image-2.png",
       "https://i.ibb.co/v49wRqH1/a-10-image-3.png"
     ],
-    "description": "A blog platform where users can read and post gardening tips. Includes full CRUD, authentication, and a responsive UI.",
+    "description": "This is a full-featured gardening tips web app where users can share and explore useful tips about plant care, indoor/outdoor gardening, composting, and more. It includes authentication, live tip filtering, and CRUD functionality using Firebase and MongoDB. The UI is built with Tailwind CSS and fully responsive across all devices.",
     "tags": [
       "React",
       "Node.js",
       "MongoDB",
-      "Express",
+      "Express.js",
       "Firebase",
-      "Tailwind",
-      "CSS",
-      "Html"
+      "Tailwind.css"
     ],
-    "githubClient": "https://github.com/Programming-Hero-Web-Course4/b11a10-client-side-sohanpk24",
-    "githubServer": "https://github.com/Programming-Hero-Web-Course4/b11a10-server-side-sohanpk24",
+    "githubClient": "https://github.com/SohanurRahman007/grow-together-client-new",
+    "githubServer": "https://github.com/SohanurRahman007/gro-together-server-new",
     "webapp": "https://grow-together-auth.web.app/"
-  },
-  {
-    "id": 3,
-    "title": "Local Vibe",
-    "images": [
-      "https://i.ibb.co/wrxwz9Xn/a-11-image-1.png",
-      "https://i.ibb.co/QjJgbsKk/a-11-image-2.png",
-      "https://i.ibb.co/jPTcjvKv/a-11-image-3.png"
-    ],
-    "description": "Local Vibe is a modern frontend web application focused on user authentication and personalized content access. The project showcases seamless login/logout flows, conditional rendering based on user state, and secure client-side routing — all built using modern frontend technologies",
-    "tags": [
-      "React",
-      "Node.js",
-      "Daisy UI",
-      "Mumba UI",
-      "Firebase",
-      "Tailwind",
-      "CSS",
-      "Html"
-    ],
-    "githubClient": "https://github.com/SohanurRahman007/assingnment-9-polishing",
-    "githubServer": "https://github.com/SohanurRahman007/assingnment-9-polishing",
-    "webapp": "https://local-vibe-authentication.web.app/"
   }
 ]

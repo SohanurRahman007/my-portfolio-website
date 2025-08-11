@@ -9,6 +9,7 @@ import {
   FaGraduationCap,
   FaLaptopCode,
   FaCode,
+  FaEnvelope,
 } from "react-icons/fa";
 
 const navLinks = [
@@ -16,6 +17,7 @@ const navLinks = [
   { id: 2, name: "Skills", to: "skills", icon: FaCode },
   { id: 3, name: "Education", to: "education", icon: FaGraduationCap },
   { id: 4, name: "Projects", to: "projects", icon: FaLaptopCode },
+  { id: 5, name: "Contact", to: "contact", icon: FaEnvelope },
 ];
 
 const Navbar = () => {
@@ -82,7 +84,7 @@ const Navbar = () => {
             href="https://drive.google.com/file/d/1GJNwcoBlDqkboGTVN1PcrNKu0iJGf0GR/view"
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:flex px-4 py-2 bg-indigo-600 text-white rounded-full hover:bg-indigo-700 transition items-center gap-2 shadow"
+            className="hidden md:flex px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-full transition items-center gap-2 shadow"
           >
             <FaDownload />
             Resume
@@ -128,7 +130,7 @@ const Navbar = () => {
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setMenuOpen(false)}
-              className="flex items-center gap-2 text-indigo-600 dark:text-indigo-400 font-medium hover:text-indigo-800 transition"
+              className="flex items-center gap-2 text-indigo-500 dark:text-indigo-400 font-medium hover:text-indigo-600 transition cursor-pointer"
             >
               <FaDownload />
               Resume

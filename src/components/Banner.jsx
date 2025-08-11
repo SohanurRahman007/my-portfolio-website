@@ -13,7 +13,7 @@ const Banner = () => {
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center px-4 py-20 "
+      className="min-h-screen flex items-center justify-center px-4 "
     >
       <style>{`
         /* Animated border effect for the download button */
@@ -101,13 +101,12 @@ const Banner = () => {
           transition={{ duration: 1, type: "spring" }}
           className="flex-1 text-center md:text-left"
         >
-          <h1 className="text-4xl md:text-5xl font-bold text-white mb-2">
-            Hi, I'm <br />{" "}
-            <span className=" text-indigo-400 ">Sohanur Rahman</span>
+          <h1 className="text-3xl md:text-4xl font-extrabold lg:text-5xl lg:font-bold text-indigo-400 mb-2">
+            Hi, I'm <br /> <span className=" text-white ">Sohanur Rahman</span>
           </h1>
           <h2 className="text-xl md:text-2xl text-gray-200 font-semibold mb-4">
             Full Stack Developer |{" "}
-            <span className="text-blue-400">
+            <span className="text-indigo-400">
               <TypeAnimation
                 sequence={[
                   "Building modern apps.",
