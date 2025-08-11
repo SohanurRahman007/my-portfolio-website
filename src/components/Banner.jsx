@@ -1,12 +1,3 @@
-/**
- * Banner Component:
- * This component represents the main hero section of a portfolio.
- * It features a profile image, professional title, a brief summary,
- * and social media links. The component uses Framer Motion for
- * subtle entry animations and includes a resume download button with a
- * unique animated border effect. The overall design is clean and
- * responsive, adapting to different screen sizes.
- */
 import React from "react";
 import { motion } from "framer-motion";
 import {
@@ -16,6 +7,7 @@ import {
   FaFileDownload,
 } from "react-icons/fa";
 import profileImage from "../assets/image/sohanur.jpg";
+import { TypeAnimation } from "react-type-animation";
 
 const Banner = () => {
   return (
@@ -113,10 +105,25 @@ const Banner = () => {
             Hi, I'm <br />{" "}
             <span className=" text-indigo-400 ">Sohanur Rahman</span>
           </h1>
-          <h2 className="text-xl md:text-2xl text-gray-300 mb-4">
-            Full Stack Developer | MERN Stack Enthusiast
+          <h2 className="text-xl md:text-2xl text-gray-200 font-semibold mb-4">
+            Full Stack Developer |{" "}
+            <span className="text-blue-400">
+              <TypeAnimation
+                sequence={[
+                  "Building modern apps.",
+                  1500,
+                  "Learning new tech.",
+                  1500,
+                  "Creating seamless experiences.",
+                  1500,
+                ]}
+                wrapper="span"
+                speed={50}
+                repeat={Infinity}
+              />
+            </span>
           </h2>
-          <p className="text-gray-400 max-w-xl mx-auto md:mx-0 mb-6 leading-relaxed">
+          <p className="text-gray-300 max-w-xl mx-auto md:mx-0 mb-6 leading-relaxed">
             As a skilled Full Stack Developer, I specialize in crafting dynamic
             and responsive web applications using a modern tech stack. I am
             proficient in JavaScript and the React.js framework, with hands-on

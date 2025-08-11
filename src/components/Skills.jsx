@@ -1,23 +1,20 @@
 import React from "react";
 import Tilt from "react-parallax-tilt";
+import Marquee from "react-fast-marquee";
+import { motion } from "framer-motion";
 
 const SkillsInfo = [
   {
     title: "Frontend",
     skills: [
       {
-        name: "React",
+        name: "React.js",
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
-      },
-      {
-        name: "Next.js",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
       },
       {
         name: "Tailwind CSS",
         logo: "https://unpkg.com/simple-icons@v9/icons/tailwindcss.svg",
       },
-
       {
         name: "JavaScript",
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
@@ -31,8 +28,8 @@ const SkillsInfo = [
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg",
       },
       {
-        name: "React Router",
-        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
+        name: "Material UI",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg",
       },
     ],
   },
@@ -55,6 +52,14 @@ const SkillsInfo = [
         name: "Firebase",
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg",
       },
+      {
+        name: "Postman",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postman/postman-original.svg",
+      },
+      {
+        name: "JWT",
+        logo: "https://www.vectorlogo.zone/logos/jwtio/jwtio-icon.svg",
+      },
     ],
   },
   {
@@ -76,17 +81,22 @@ const SkillsInfo = [
         name: "Figma",
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/figma/figma-original.svg",
       },
+      {
+        name: "Vercel",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg",
+      },
+      {
+        name: "Netlify",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/netlify/netlify-original.svg",
+      },
     ],
   },
 ];
 
 const Skills = () => {
   return (
-    <section
-      id="skills"
-      className="min-h-[80vh] px-6 pt-10 bg-gradient-to-tr from-[#f0f0f0] via-white to-[#e0e7ff] dark:from-gray-900 dark:via-gray-800 dark:to-gray-900 pb-6"
-    >
-      <h2 className=" text-2xl md:text-3xl md:font-extrabold text-center text-gray-900 dark:text-white tracking-wide">
+    <section id="skills" className="min-h-[80vh] px-6 pt-10  pb-6">
+      <h2 className="text-2xl md:text-3xl font-extrabold text-center text-gray-900 dark:text-white tracking-wide">
         Skills
       </h2>
       <div className="w-24 h-1 bg-indigo-500 mx-auto mt-2"></div>
@@ -104,26 +114,35 @@ const Skills = () => {
             transitionSpeed={500}
           >
             <div className="bg-white dark:bg-gray-800 rounded-3xl p-4 shadow-lg border border-gray-300 dark:border-gray-700">
-              <h3 className="text-2xl md:text-3xl font-semibold mb-3 text-center text-indigo-600 dark:text-indigo-400  ">
+              <h3 className="text-2xl md:text-3xl font-semibold mb-3 text-center text-indigo-600 dark:text-indigo-400">
                 {SkillsInfo[0].title}
               </h3>
-              <div className="flex flex-wrap gap-6 justify-center">
+              <Marquee
+                pauseOnHover={true}
+                speed={60}
+                direction="right"
+                gradient={true}
+                gradientColor={[255, 255, 255]}
+                gradientWidth={100}
+                autoFill={true}
+              >
                 {SkillsInfo[0].skills.map(({ name, logo }) => (
-                  <div
+                  <motion.a
                     key={name}
-                    className="flex flex-col items-center space-y-2 p-3 w-20 rounded-lg cursor-pointer hover:bg-indigo-100 dark:hover:bg-indigo-900 transition"
+                    href="#"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center p-3 w-14 h-14 rounded-full cursor-pointer bg-gray-900 border-2 border-indigo-500 shadow-[0_0_15px_rgba(99,102,241,0.8)] transition-transform duration-200 mr-6" // Using mr-6 for spacing
+                    whileHover={{ scale: 1.01 }}
                   >
                     <img
                       src={logo}
                       alt={name}
-                      className="w-12 h-12 object-contain"
+                      className="w-6 h-6 object-contain"
                     />
-                    <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                      {name}
-                    </p>
-                  </div>
+                  </motion.a>
                 ))}
-              </div>
+              </Marquee>
             </div>
           </Tilt>
         </div>
@@ -136,26 +155,32 @@ const Skills = () => {
           transitionSpeed={500}
         >
           <div className="bg-white dark:bg-gray-800 rounded-3xl p-4 shadow-lg border border-gray-300 dark:border-gray-700 h-full">
-            <h3 className="text-2xl md:text-3xl font-semibold mb-3 text-center text-indigo-600 dark:text-indigo-400 ">
+            <h3 className="text-2xl md:text-3xl font-semibold mb-3 text-center text-indigo-600 dark:text-indigo-400">
               {SkillsInfo[1].title}
             </h3>
-            <div className="flex flex-wrap gap-6 justify-center">
+            <Marquee
+              pauseOnHover={true}
+              speed={50}
+              gradient={false}
+              autoFill={true}
+            >
               {SkillsInfo[1].skills.map(({ name, logo }) => (
-                <div
+                <motion.a
                   key={name}
-                  className="flex flex-col items-center space-y-2 p-3 w-20 rounded-lg cursor-pointer hover:bg-indigo-100 dark:hover:bg-indigo-900 transition"
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center p-3 w-14 h-14 rounded-full cursor-pointer bg-gray-900 border-2 border-indigo-500 shadow-[0_0_15px_rgba(99,102,241,0.8)] transition-transform duration-200 mr-6" // Using mr-6 for spacing
+                  whileHover={{ scale: 1.01 }}
                 >
                   <img
                     src={logo}
                     alt={name}
-                    className="w-12 h-12 object-contain"
+                    className="w-8 h-8 object-contain"
                   />
-                  <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                    {name}
-                  </p>
-                </div>
+                </motion.a>
               ))}
-            </div>
+            </Marquee>
           </div>
         </Tilt>
 
@@ -167,26 +192,32 @@ const Skills = () => {
           transitionSpeed={500}
         >
           <div className="bg-white dark:bg-gray-800 rounded-3xl p-4 shadow-lg border border-gray-300 dark:border-gray-700 h-full">
-            <h3 className="text-2xl md:text-3xl font-semibold mb-3 text-center text-indigo-600 dark:text-indigo-400 ">
+            <h3 className="text-2xl md:text-3xl font-semibold mb-3 text-center text-indigo-600 dark:text-indigo-400">
               {SkillsInfo[2].title}
             </h3>
-            <div className="flex flex-wrap gap-6 justify-center">
+            <Marquee
+              pauseOnHover={true}
+              speed={50}
+              gradient={false}
+              autoFill={true}
+            >
               {SkillsInfo[2].skills.map(({ name, logo }) => (
-                <div
+                <motion.a
                   key={name}
-                  className="flex flex-col items-center space-y-2 p-3 w-20 rounded-lg cursor-pointer hover:bg-indigo-100 dark:hover:bg-indigo-900 transition"
+                  href="#"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center p-3 w-14 h-14 rounded-full cursor-pointer bg-gray-900 border-2 border-indigo-500 shadow-[0_0_15px_rgba(99,102,241,0.8)] transition-transform duration-200 mr-6" // Using mr-6 for spacing
+                  whileHover={{ scale: 1.01 }}
                 >
                   <img
                     src={logo}
                     alt={name}
-                    className="w-12 h-12 object-contain"
+                    className="w-8 h-8 object-contain"
                   />
-                  <p className="text-sm font-medium text-gray-700 dark:text-gray-300">
-                    {name}
-                  </p>
-                </div>
+                </motion.a>
               ))}
-            </div>
+            </Marquee>
           </div>
         </Tilt>
       </div>

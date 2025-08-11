@@ -1,29 +1,27 @@
 import React from "react";
+import { motion } from "framer-motion";
 
 const cardData = [
   {
     title: "My Programming Journey",
     content:
-      "Driven by curiosity and creativity, I started building web interfaces before diving deep into the MERN stack. It’s been a journey of turning ideas into full-fledged applications.",
+      "Though my academic background is in Political Science, my career path is driven by a passion for technology. I entered the programming world last year and quickly fell in love with the MERN stack. I enjoy the process of turning a simple concept into a dynamic, well-crafted web application.",
   },
   {
     title: "My Work Style",
     content:
-      "I focus on clean code, modern UI, and seamless user experiences. Whether it’s the frontend design or backend logic, I prioritize performance and maintainability.",
+      "My work is defined by a commitment to quality. I specialize in developing performant, maintainable, and scalable applications. I consistently prioritize clean code standards, effective state management, and a seamless user experience across the entire stack.",
   },
   {
     title: "Beyond Code",
     content:
-      "Away from the screen, I enjoy photography, hiking, and exploring new ideas. These passions help me stay inspired and bring fresh perspectives to my projects.",
+      "When I'm not coding, I'm often on the move. I love traveling and exploring new places, which provides me with a broader perspective. I'm also an avid badminton player and enjoy trying new foods. These activities are my way of recharging and staying creative.",
   },
 ];
 
 const About = () => {
   return (
-    <section
-      id="about"
-      className="py-10 px-6 md:px-20 bg-gradient-to-tr from-[#f0f0f0] via-white to-[#e0e7ff] dark:from-gray-900 dark:via-gray-800 dark:to-gray-900"
-    >
+    <section id="about" className="py-10 px-4">
       <h2 className="text-2xl md:text-3xl font-extrabold text-center mb-2 text-gray-900 dark:text-white tracking-wide">
         About Me
       </h2>
@@ -33,8 +31,16 @@ const About = () => {
       </p>
       <div className="max-w-7xl mt-4 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10">
         {cardData.map(({ title, content }, index) => (
-          <div
+          <motion.div
             key={index}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{
+              duration: 0.8,
+              delay: index * 0.2, // This staggers the animation
+              ease: "easeOut",
+            }}
+            viewport={{ once: false }} // This is the key change!
             className="card card-compact bg-base-100 dark:bg-gray-800 shadow-xl hover:scale-[1.03] transition-transform duration-300 ease-in-out min-h-[250px] rounded-2xl border border-gray-200 dark:border-gray-700"
           >
             <div className="card-body flex flex-col justify-center px-8 py-8 text-center">
@@ -47,7 +53,7 @@ const About = () => {
                 </span>
               </p>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>
