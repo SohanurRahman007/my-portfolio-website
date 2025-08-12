@@ -22,11 +22,12 @@
       "MongoDB",
       "Express.js"
     ],
-    "githubClient": "https://github.com/SohanurRahman007/assingnment-9-polishing",
-    "githubServer": "https://github.com/SohanurRahman007/assingnment-9-polishing",
-    "webapp": "https://fitsphere-e30b9.web.app/"
-  },
+    "githubClient": "https://github.com/SohanurRahman007/assingnment-12-polishing-client",
+    "webapp": "https://fitsphere-e30b9.web.app/",
+    "challenges": "Building the FitSphere app was challenging, mainly due to securing Stripe payment integration, managing different user roles on the dashboard, and implementing backend API security using a role-based access control system and JWT authentication.",
 
+    "futurePlans": "Future enhancements for FitSphere could include a dedicated mobile app, a nutrition and meal planning feature, and more detailed trainer analytics to better track client progress."
+  },
   {
     "id": 2,
     "title": "Idea Canvas",
@@ -38,7 +39,6 @@
       "https://i.ibb.co.com/J47SJPQ/idea-4.png",
       "https://i.ibb.co.com/RpjbLQbS/idea-6.png"
     ],
-
     "description": "This dynamic platform is designed for visually organizing and managing creative ideas. It allows users to perform CRUD operations on idea cards, which include details, goals, and collaboration notes. A secure commenting system and JSON Web Tokens (JWT) ensure a safe and collaborative environment for all users.",
     "tags": [
       "React",
@@ -50,8 +50,10 @@
       "Tailwind.css"
     ],
     "githubClient": "https://github.com/SohanurRahman007/assignment-11-polishing",
-    "githubServer": "https://github.com/SohanurRahman007/assignment-11-idea-canvas-server-polishing-new",
-    "webapp": "https://idea-canvas-88aaf.web.app/"
+    "webapp": "https://idea-canvas-88aaf.web.app/",
+    "challenges": "Building the platform was challenging due to the need for a secure and dynamic environment. The main hurdles were implementing robust CRUD operations on idea cards and creating a safe collaborative space using a secure commenting system and JWT authentication",
+
+    "futurePlans": "The Idea Canvas is a structured feature that helps users develop their creative concepts by defining a problem statement, identifying a target audience, and outlining a proposed solution. This approach moves beyond simple note-taking, turning the platform into a strategic planning tool for fleshing out ideas."
   },
 
   {
@@ -59,8 +61,11 @@
     "title": "Green Connected",
     "images": [
       "https://i.ibb.co/NdkVW3rd/a-10-image-1.png",
-      " https://i.ibb.co/yntgxr6B/a-10-image-2.png",
-      "https://i.ibb.co/v49wRqH1/a-10-image-3.png"
+      "https://i.ibb.co/yntgxr6B/a-10-image-2.png",
+      "https://i.ibb.co/v49wRqH1/a-10-image-3.png",
+      "https://i.ibb.co.com/jZG7jVFY/green1.png",
+      "https://i.ibb.co.com/Fbs6WTxg/green2.png",
+      "https://i.ibb.co.com/DDKc2LXs/green3.png"
     ],
     "description": "This is a full-featured gardening tips web app where users can share and explore useful tips about plant care, indoor/outdoor gardening, composting, and more. It includes authentication, live tip filtering, and CRUD functionality using Firebase and MongoDB. The UI is built with Tailwind CSS and fully responsive across all devices.",
     "tags": [
@@ -72,7 +77,8 @@
       "Tailwind.css"
     ],
     "githubClient": "https://github.com/SohanurRahman007/grow-together-client-new",
-    "githubServer": "https://github.com/SohanurRahman007/gro-together-server-new",
-    "webapp": "https://grow-together-auth.web.app/"
+    "webapp": "https://grow-together-auth.web.app/",
+    "challenges": "Building Green Connected required handling real-time data synchronization between Firebase and MongoDB. I also needed to implement a secure authentication system and a fast live filtering feature for tips without compromising performance.",
+    "futurePlans": "Future plans include creating a community forum for users to ask and answer questions. I also want to develop a personalized dashboard where users can save tips and create a gardening calendar."
   }
 ]
