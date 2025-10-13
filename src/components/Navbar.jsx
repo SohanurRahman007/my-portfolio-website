@@ -81,7 +81,7 @@ const Navbar = () => {
         <div className="flex items-center gap-4">
           {/* Resume Button */}
           <a
-            href="https://drive.google.com/file/d/1GJNwcoBlDqkboGTVN1PcrNKu0iJGf0GR/view"
+            href="https://drive.google.com/file/d/1KsseenqW9PJr33GIU1MjFF2W12D5wfx6/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden md:flex px-4 py-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-full transition items-center gap-2 shadow"

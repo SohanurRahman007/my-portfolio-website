@@ -170,8 +170,8 @@ const Banner = () => {
               <motion.a
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="https://drive.google.com/uc?export=download&id=1GJNwcoBlDqkboGTVN1PcrNKu0iJGf0GR"
-                download
+                href="/Sohanur Rahman.pdf"
+                download="Sohanur_Rahman_Resume.pdf"
                 className="animated-button-border flex items-center justify-center relative z-10 px-6 py-2 rounded-full dark:text-indigo-400 bg-white dark:bg-gray-800 transition-colors duration-300 shadow-lg font-semibold"
               >
                 <motion.div
