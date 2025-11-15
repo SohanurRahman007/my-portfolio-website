@@ -1,206 +1,376 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
   FaGithub,
   FaLinkedin,
   FaFacebook,
   FaFileDownload,
+  FaJs,
+  FaReact,
+  FaNodeJs,
+  FaDatabase,
 } from "react-icons/fa";
+import {
+  SiTypescript,
+  SiNextdotjs,
+  SiExpress,
+  SiTailwindcss,
+  SiFirebase,
+  SiMongodb,
+} from "react-icons/si";
 import profileImage from "../assets/image/sohanur.jpg";
 import { TypeAnimation } from "react-type-animation";
 
 const Banner = () => {
+  const [isHovering, setIsHovering] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
+
+  // Check if device is mobile
+  React.useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024); // lg breakpoint
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  const techIcons = [
+    {
+      icon: FaJs,
+      name: "JavaScript",
+      color: "text-yellow-400",
+      bgColor: "bg-yellow-500/20",
+    },
+    {
+      icon: SiTypescript,
+      name: "TypeScript",
+      color: "text-blue-500",
+      bgColor: "bg-blue-500/20",
+    },
+    {
+      icon: FaReact,
+      name: "React.js",
+      color: "text-cyan-400",
+      bgColor: "bg-cyan-500/20",
+    },
+    {
+      icon: SiNextdotjs,
+      name: "Next.js",
+      color: "text-white",
+      bgColor: "bg-gray-500/20",
+    },
+    {
+      icon: FaNodeJs,
+      name: "Node.js",
+      color: "text-green-500",
+      bgColor: "bg-green-500/20",
+    },
+    {
+      icon: SiExpress,
+      name: "Express.js",
+      color: "text-gray-300",
+      bgColor: "bg-gray-400/20",
+    },
+    {
+      icon: SiMongodb,
+      name: "MongoDB",
+      color: "text-green-400",
+      bgColor: "bg-green-600/20",
+    },
+    {
+      icon: SiTailwindcss,
+      name: "Tailwind CSS",
+      color: "text-cyan-300",
+      bgColor: "bg-cyan-400/20",
+    },
+    {
+      icon: SiFirebase,
+      name: "Firebase",
+      color: "text-yellow-500",
+      bgColor: "bg-yellow-600/20",
+    },
+  ];
+
+  // Handle mobile touch and desktop hover
+  const handleImageInteraction = () => {
+    setIsHovering(true);
+  };
+
+  const handleImageLeave = () => {
+    setIsHovering(false);
+  };
+
+  // For mobile devices, show icons on click/touch
+  const shouldShowIcons = isMobile ? isHovering : isHovering;
+
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center px-4 "
+      className="min-h-screen flex items-center justify-center px-4 bg-transparent relative overflow-hidden mt-20 md:mt-2"
     >
-      <style>{`
-        /* Animated border effect for the download button */
-        @keyframes glow-border {
-          0% { transform: rotate(0deg); }
-          100% { transform: rotate(360deg); }
-        }
-        .animated-button-border {
-          position: relative;
-          padding: 2px; /* Creates the border width */
-          background: #111827;
-          border-radius: 9999px;
-          overflow: hidden;
-          box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-        }
-        .animated-button-border::before {
-          content: '';
-          position: absolute;
-          inset: 0;
-          background: conic-gradient(transparent 0%, #60a5fa 20%, transparent 40%, transparent 60%, #818cf8 80%, transparent 100%);
-          animation: glow-border 4s linear infinite;
-          z-index: 1;
-          filter: blur(2px);
-          transition: filter 0.3s ease;
-        }
-        .animated-button-border:hover::before {
-          animation-duration: 2s;
-          filter: blur(4px);
-        }
-        
-        /* Styling for the button's inner content */
-        .download-button-inner {
-          position: relative;
-          z-index: 20;
-          display: flex;
-          align-items: center;
-          gap: 0.5rem;
-          padding: 0.5rem 1rem;
-          background-color: #111827;
-          border-radius: 9999px;
-        }
-
-        /* Professional Social Icons Styling */
-        .social-icon-wrapper {
-          display: flex;
-          gap: 1rem;
-          align-items: center;
-          justify-content: center;
-        }
-
-        .social-icon-wrapper a {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 2.5rem;
-          height: 2.5rem;
-          border-radius: 50%;
-          color: #fff;
-          background-color: #374151; /* Default background color */
-          transition: all 0.3s ease-in-out;
-        }
-
-        .social-icon-wrapper a:hover {
-          transform: scale(1.1);
-          box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .social-icon-wrapper a.linkedin:hover {
-          background-color: #0e76a8; /* LinkedIn blue */
-        }
-        
-        .social-icon-wrapper a.github:hover {
-          background-color: #171515; /* GitHub dark gray */
-        }
-
-        .social-icon-wrapper a.facebook:hover {
-          background-color: #3b5998; /* Facebook blue */
-        }
-      `}</style>
-      <div className="w-full max-w-7xl flex flex-col-reverse md:flex-row items-center justify-between gap-10">
+      <div className="w-full max-w-7xl flex flex-col-reverse lg:flex-row items-center justify-between gap-12 relative z-10">
         {/* Left: Text Content */}
         <motion.div
           initial={{ x: -80, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 1, type: "spring" }}
-          className="flex-1 text-center md:text-left"
+          className="flex-1 text-center lg:text-left"
         >
-          <h1 className="text-3xl md:text-4xl font-extrabold lg:text-5xl lg:font-bold text-indigo-400 mb-2">
-            Hi, I'm <br /> <span className=" text-white ">Sohanur Rahman</span>
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">
+            <span className="text-transparent bg-clip-text bg-gradient-to-r from-indigo-600 to-purple-600">
+              Hello, I'm{" "}
+            </span>
+            <br />
+            <span className="text-indigo-700 dark:text-white">
+              Sohanur Rahman
+            </span>
           </h1>
-          <h2 className="text-xl md:text-2xl text-gray-200 font-semibold mb-4">
-            Full Stack Developer |{" "}
-            <span className="text-indigo-400">
+
+          <div className="mb-6">
+            <h2 className="text-xl md:text-2xl text-indigo-600 dark:text-indigo-400 font-semibold mb-2">
+              Full Stack Developer
+            </h2>
+            <div className="text-lg md:text-xl text-indigo-500 dark:text-indigo-300 font-medium">
               <TypeAnimation
                 sequence={[
-                  "Building modern apps.",
-                  1500,
-                  "Learning new tech.",
-                  1500,
-                  "Creating seamless experiences.",
-                  1500,
+                  "React.js | Next.js Developer",
+                  2000,
+                  "Node.js | Express.js Backend",
+                  2000,
+                  "MongoDB | Firebase Expert",
+                  2000,
+                  "Building Scalable Web Apps",
+                  2000,
                 ]}
                 wrapper="span"
                 speed={50}
                 repeat={Infinity}
               />
-            </span>
-          </h2>
-          <p className="text-gray-300 max-w-xl mx-auto md:mx-0 mb-6 leading-relaxed">
-            As a skilled Full Stack Developer, I specialize in crafting dynamic
-            and responsive web applications using a modern tech stack. I am
-            proficient in JavaScript and the React.js framework, with hands-on
-            experience utilizing various React Component Libraries to build
-            intuitive user interfaces. My backend expertise includes developing
-            robust and secure APIs with Node.js and Express.js, and managing
-            data effectively with MongoDB. I am passionate about delivering
-            seamless, end-to-end solutions that are both high-performing and
-            user-friendly.
+            </div>
+          </div>
+
+          <p className="text-indigo-600 dark:text-gray-300 max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed text-lg">
+            Passionate Junior Full-Stack Developer skilled in{" "}
+            <strong className="text-indigo-700 dark:text-indigo-400">
+              React.js
+            </strong>
+            ,{" "}
+            <strong className="text-indigo-700 dark:text-indigo-400">
+              Node.js
+            </strong>
+            ,
+            <strong className="text-indigo-700 dark:text-indigo-400">
+              {" "}
+              MongoDB
+            </strong>
+            , and{" "}
+            <strong className="text-indigo-700 dark:text-indigo-400">
+              Next.js
+            </strong>
+            . I love creating smooth, responsive, and secure web apps with
+            excellent user experiences. Excited to learn, grow, and build
+            awesome projects with creative teams.
           </p>
 
-          {/* Buttons and Social Icons */}
-          <div className="flex flex-col sm:flex-row items-center gap-4">
-            <div className="social-icon-wrapper">
-              <motion.a
-                whileHover={{ scale: 1.2 }}
-                href="https://github.com/SohanurRahman007"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="github"
-              >
-                <FaGithub />
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.2 }}
-                href="https://www.linkedin.com/in/sohanurrahman007/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="linkedin"
-              >
-                <FaLinkedin />
-              </motion.a>
-              <motion.a
-                whileHover={{ scale: 1.2 }}
-                href="https://www.facebook.com/profile.php?id=100080957303185"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="facebook"
-              >
-                <FaFacebook />
-              </motion.a>
-            </div>
-            {/* Download Resume Button with Animated Border */}
-            <div className="flex flex-wrap gap-4 mt-4 sm:mt-0">
-              <motion.a
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-                href="/Sohanur Rahman.pdf"
-                download="Sohanur_Rahman_Resume.pdf"
-                className="animated-button-border flex items-center justify-center relative z-10 px-6 py-2 rounded-full dark:text-indigo-400 bg-white dark:bg-gray-800 transition-colors duration-300 shadow-lg font-semibold"
-              >
-                <motion.div
-                  className="download-button-inner relative z-20 flex items-center gap-2 px-4 py-2 bg-gray-900 rounded-full"
-                  whileHover={{ scale: 1.02 }}
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row items-center gap-6">
+            {/* Social Links */}
+            <div className="flex gap-4">
+              {[
+                {
+                  icon: FaGithub,
+                  href: "https://github.com/SohanurRahman007",
+                  color: "hover:bg-indigo-100 dark:hover:bg-indigo-900",
+                  label: "GitHub",
+                },
+                {
+                  icon: FaLinkedin,
+                  href: "https://www.linkedin.com/in/sohanurrahman007/",
+                  color: "hover:bg-indigo-100 dark:hover:bg-indigo-900",
+                  label: "LinkedIn",
+                },
+                {
+                  icon: FaFacebook,
+                  href: "https://www.facebook.com/profile.php?id=100080957303185",
+                  color: "hover:bg-indigo-100 dark:hover:bg-indigo-900",
+                  label: "Facebook",
+                },
+              ].map((social, index) => (
+                <motion.a
+                  key={social.label}
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  transition={{ delay: 1 + index * 0.1 }}
+                  whileHover={{ scale: 1.1, y: -2 }}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`w-12 h-12 rounded-full bg-white dark:bg-gray-800 shadow-md flex items-center justify-center text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800 transition-all duration-300 ${social.color}`}
+                  aria-label={social.label}
                 >
-                  <FaFileDownload /> Resume Download
-                </motion.div>
-              </motion.a>
+                  <social.icon className="text-lg" />
+                </motion.a>
+              ))}
             </div>
+
+            {/* Download Resume Button */}
+            <motion.a
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              transition={{ delay: 1.3 }}
+              whileHover={{
+                scale: 1.05,
+                y: -2,
+                boxShadow: "0 10px 30px rgba(99, 102, 241, 0.3)",
+              }}
+              whileTap={{ scale: 0.95 }}
+              href="/Resume of Sohanur Rahman.pdf"
+              download="Resume of Sohanur Rahman.pdf"
+              className="group relative bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 md:px-6 md:py-3 rounded-xl font-semibold flex items-center gap-3 shadow-lg transition-all duration-300 overflow-hidden"
+            >
+              <motion.div
+                animate={{ y: [0, -3, 0] }}
+                transition={{ duration: 2, repeat: Infinity }}
+              >
+                <FaFileDownload className="text-lg" />
+              </motion.div>
+              <span>Download Resume</span>
+            </motion.a>
           </div>
         </motion.div>
 
-        {/* Right: Profile Image (without animated border) */}
+        {/* Right: Profile Image with Perfect Orbiting Icons */}
         <motion.div
-          initial={{ x: 80, opacity: 0 }}
-          animate={{ x: 0, opacity: 1 }}
-          transition={{ duration: 1, type: "spring", delay: 0.2 }}
-          className="flex-1 flex justify-center md:justify-end"
+          initial={{ x: 80, opacity: 0, scale: 0.8 }}
+          animate={{ x: 0, opacity: 1, scale: 1 }}
+          transition={{ duration: 1, type: "spring", delay: 0.3 }}
+          className="flex-1 flex justify-center lg:justify-end"
         >
-          <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full overflow-hidden shadow-2xl border-4 border-indigo-500 backdrop-blur-xl bg-gray-800/30">
-            <img
-              src={profileImage}
-              alt="Sohanur Rahman"
-              className="w-full h-full object-cover"
-            />
+          <div
+            className="relative cursor-pointer"
+            onMouseEnter={!isMobile ? handleImageInteraction : undefined}
+            onMouseLeave={!isMobile ? handleImageLeave : undefined}
+            onClick={isMobile ? handleImageInteraction : undefined}
+            onTouchStart={isMobile ? handleImageInteraction : undefined}
+          >
+            {/* Perfect Circle Container */}
+            <div className="relative w-[300px] h-[300px] lg:w-[450px] lg:h-[450px] flex items-center justify-center rounded-full border border-transparent mx-auto">
+              {/* Main Profile Image */}
+              <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-indigo-200 dark:border-indigo-800 shadow-2xl backdrop-blur-sm bg-gradient-to-br from-white/10 to-white/5 z-10">
+                <img
+                  src={profileImage}
+                  alt="Sohanur Rahman - Full Stack Developer"
+                  className="w-full h-full object-cover"
+                />
+
+                {/* Hint text when not hovering */}
+                {!shouldShowIcons && (
+                  <div className="absolute inset-0 flex items-end justify-center pb-4 lg:pb-6">
+                    <motion.div
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      className="text-indigo-700 dark:text-indigo-300 text-xs lg:text-sm font-medium bg-white/80 dark:bg-gray-800/80 px-3 lg:px-4 py-1 lg:py-2 rounded-full backdrop-blur-sm border border-indigo-200 dark:border-indigo-800 text-center"
+                    >
+                      {isMobile ? "Tap to see skills" : "Hover to see skills"}
+                    </motion.div>
+                  </div>
+                )}
+              </div>
+
+              {/* Perfectly Balanced Orbiting Tech Icons */}
+              {techIcons.map((tech, index) => {
+                const totalIcons = techIcons.length;
+                const angle = (index / totalIcons) * 2 * Math.PI;
+                const radius = isMobile ? 140 : 190; // Smaller radius for mobile
+
+                const x = Math.cos(angle) * radius;
+                const y = Math.sin(angle) * radius;
+
+                return (
+                  <motion.div
+                    key={tech.name}
+                    className={`absolute w-10 h-10 lg:w-12 lg:h-12 rounded-full flex items-center justify-center border-2 border-indigo-200 dark:border-indigo-800 shadow-xl backdrop-blur-sm ${tech.bgColor} ${tech.color} z-20`}
+                    initial={{
+                      scale: 0,
+                      opacity: 0,
+                    }}
+                    animate={{
+                      scale: shouldShowIcons ? 1 : 0,
+                      opacity: shouldShowIcons ? 1 : 0,
+                      x: shouldShowIcons ? x : 0,
+                      y: shouldShowIcons ? y : 0,
+                      rotate: shouldShowIcons ? 360 : 0,
+                    }}
+                    transition={{
+                      x: {
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 15,
+                        delay: shouldShowIcons ? index * 0.1 : 0,
+                      },
+                      y: {
+                        type: "spring",
+                        stiffness: 100,
+                        damping: 15,
+                        delay: shouldShowIcons ? index * 0.1 : 0,
+                      },
+                      scale: {
+                        type: "spring",
+                        stiffness: 200,
+                        damping: 15,
+                        delay: shouldShowIcons ? index * 0.1 : 0,
+                      },
+                      opacity: {
+                        duration: 0.3,
+                        delay: shouldShowIcons ? index * 0.1 : 0,
+                      },
+                      rotate: {
+                        duration: 20,
+                        repeat: shouldShowIcons ? Infinity : 0,
+                        ease: "linear",
+                      },
+                    }}
+                    whileHover={{
+                      scale: 1.3,
+                      zIndex: 30,
+                      transition: { duration: 0.2 },
+                    }}
+                    style={{
+                      left: "50%",
+                      top: "50%",
+                      marginLeft: isMobile ? "-20px" : "-24px",
+                      marginTop: isMobile ? "-20px" : "-24px",
+                    }}
+                  >
+                    <tech.icon className="text-base lg:text-lg" />
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </motion.div>
       </div>
+
+      {/* Scroll Indicator */}
+      <motion.div
+        animate={{ y: [0, 10, 0] }}
+        transition={{ duration: 2, repeat: Infinity }}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-indigo-600 dark:text-indigo-400 hidden md:flex"
+      >
+        <div className="flex flex-col items-center gap-2">
+          <span className="text-sm">Scroll Down</span>
+          <div className="w-6 h-10 border-2 border-indigo-300 dark:border-indigo-700 rounded-full flex justify-center">
+            <motion.div
+              animate={{ y: [0, 12, 0] }}
+              transition={{ duration: 1.5, repeat: Infinity }}
+              className="w-1 h-3 bg-indigo-500 dark:bg-indigo-400 rounded-full mt-2"
+            ></motion.div>
+          </div>
+        </div>
+      </motion.div>
     </section>
   );
 };
