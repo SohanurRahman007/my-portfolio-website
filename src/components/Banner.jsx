@@ -18,7 +18,7 @@ import {
   SiFirebase,
   SiMongodb,
 } from "react-icons/si";
-import profileImage from "../assets/image/sohanur.jpg";
+import profileImage from "../assets/image/sohanur_rahman.png";
 import { TypeAnimation } from "react-type-animation";
 
 const Banner = () => {
@@ -188,13 +188,13 @@ const Banner = () => {
                 },
                 {
                   icon: FaLinkedin,
-                  href: "https://www.linkedin.com/in/sohanurrahman007/",
+                  href: "https://www.linkedin.com/in/sohanurrahman007",
                   color: "hover:bg-indigo-100 dark:hover:bg-indigo-900",
                   label: "LinkedIn",
                 },
                 {
                   icon: FaFacebook,
-                  href: "https://www.facebook.com/profile.php?id=100080957303185",
+                  href: "https://www.facebook.com/SohanurRahman0007",
                   color: "hover:bg-indigo-100 dark:hover:bg-indigo-900",
                   label: "Facebook",
                 },

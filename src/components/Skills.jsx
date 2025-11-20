@@ -12,12 +12,24 @@ const SkillsInfo = [
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg",
       },
       {
-        name: "Tailwind CSS",
-        logo: "https://unpkg.com/simple-icons@v9/icons/tailwindcss.svg",
+        name: "Next.js",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg",
+      },
+      {
+        name: "TypeScript",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg",
       },
       {
         name: "JavaScript",
         logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg",
+      },
+      {
+        name: "Tailwind CSS",
+        logo: "https://unpkg.com/simple-icons@v9/icons/tailwindcss.svg",
+      },
+      {
+        name: "Redux",
+        logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redux/redux-original.svg",
       },
       {
         name: "HTML5",
@@ -58,7 +70,15 @@ const SkillsInfo = [
       },
       {
         name: "JWT",
-        logo: "https://www.vectorlogo.zone/logos/jwtio/jwtio-icon.svg",
+        logo: "https://seeklogo.com/images/J/jwt-logo-65D86B4640-seeklogo.com.png",
+      },
+      {
+        name: "Clerk",
+        logo: "https://clerk.com/_next/image?url=%2Fimages%2Fclerk-logo.png&w=96&q=75",
+      },
+      {
+        name: "Drizzle",
+        logo: "https://avatars.githubusercontent.com/u/108468352?s=200&v=4",
       },
     ],
   },
@@ -95,31 +115,42 @@ const SkillsInfo = [
 
 const Skills = () => {
   return (
-    <section id="skills" className=" pt-16 px-4 ">
+    <section id="skills" className="pt-10 px-4">
       <h2 className="text-2xl md:text-3xl font-extrabold text-center text-gray-900 dark:text-white tracking-wide">
         Skills
       </h2>
       <div className="w-24 h-1 bg-indigo-500 mx-auto mt-2"></div>
-      <p className="text-gray-600 dark:text-gray-300 mt-2 text-lg max-w-xl mx-auto text-center mb-3 ">
+      <p className="text-gray-600 dark:text-gray-300 mt-2 text-lg max-w-xl mx-auto text-center mb-4">
         The languages, frameworks, and tools that I trust to build fast, modern,
         and secure web solutions
       </p>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-7xl mx-auto">
-        {/* First Card - Full Width on all screens */}
-        <div className="md:col-span-2">
+        {/* Frontend Card - Full Width */}
+        <motion.div
+          className="md:col-span-2"
+          initial={{ opacity: 0, y: 50 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+        >
           <Tilt
-            tiltMaxAngleX={10}
-            tiltMaxAngleY={10}
-            scale={1.05}
-            transitionSpeed={500}
+            tiltMaxAngleX={5}
+            tiltMaxAngleY={5}
+            scale={1.02}
+            transitionSpeed={1000}
+            glareEnable={true}
+            glareMaxOpacity={0.1}
+            glareColor="#ffffff"
+            glarePosition="all"
           >
-            <div className="bg-white dark:bg-gray-800 rounded-3xl p-4 shadow-lg border border-gray-300 dark:border-gray-700">
-              <h3 className="text-2xl md:text-3xl font-semibold mb-3 text-center text-indigo-600 dark:text-indigo-400">
+            <div className="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-all duration-500">
+              <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-center text-indigo-600 dark:text-indigo-400">
                 {SkillsInfo[0].title}
               </h3>
               <Marquee
                 pauseOnHover={true}
-                speed={60}
+                speed={40}
                 direction="right"
                 gradient={true}
                 gradientColor={[255, 255, 255]}
@@ -127,99 +158,135 @@ const Skills = () => {
                 autoFill={true}
               >
                 {SkillsInfo[0].skills.map(({ name, logo }) => (
-                  <motion.a
+                  <motion.div
                     key={name}
-                    href="#"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center justify-center p-3 w-14 h-14 rounded-full cursor-pointer bg-gray-900 border-2 border-indigo-500 shadow-[0_0_15px_rgba(99,102,241,0.8)] transition-transform duration-200 mr-6" // Using mr-6 for spacing
-                    whileHover={{ scale: 1.01 }}
+                    className="flex flex-col items-center mx-4 cursor-pointer group"
+                    whileHover={{ scale: 1.1, y: -5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <img
-                      src={logo}
-                      alt={name}
-                      className="w-6 h-6 object-contain"
-                    />
-                  </motion.a>
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900/30 dark:to-purple-900/30 border-2 border-indigo-200 dark:border-indigo-800 flex items-center justify-center shadow-lg group-hover:bg-indigo-500 dark:group-hover:bg-indigo-600 group-hover:border-indigo-500 transition-all duration-300">
+                      <img
+                        src={logo}
+                        alt={name}
+                        className="w-8 h-8 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300"
+                      />
+                    </div>
+                    <span className="text-xs font-medium text-gray-600 dark:text-gray-400 mt-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">
+                      {name}
+                    </span>
+                  </motion.div>
                 ))}
               </Marquee>
             </div>
           </Tilt>
-        </div>
+        </motion.div>
 
-        {/* Second Card - Half Width */}
-        <Tilt
-          tiltMaxAngleX={10}
-          tiltMaxAngleY={10}
-          scale={1.05}
-          transitionSpeed={500}
+        {/* Backend & DB Card */}
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
         >
-          <div className="bg-white dark:bg-gray-800 rounded-3xl p-4 shadow-lg border border-gray-300 dark:border-gray-700 h-full">
-            <h3 className="text-2xl md:text-3xl font-semibold mb-3 text-center text-indigo-600 dark:text-indigo-400">
-              {SkillsInfo[1].title}
-            </h3>
-            <Marquee
-              pauseOnHover={true}
-              speed={50}
-              gradient={false}
-              autoFill={true}
-            >
-              {SkillsInfo[1].skills.map(({ name, logo }) => (
-                <motion.a
-                  key={name}
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center p-3 w-14 h-14 rounded-full cursor-pointer bg-gray-900 border-2 border-indigo-500 shadow-[0_0_15px_rgba(99,102,241,0.8)] transition-transform duration-200 mr-6" // Using mr-6 for spacing
-                  whileHover={{ scale: 1.01 }}
-                >
-                  <img
-                    src={logo}
-                    alt={name}
-                    className="w-8 h-8 object-contain"
-                  />
-                </motion.a>
-              ))}
-            </Marquee>
-          </div>
-        </Tilt>
+          <Tilt
+            tiltMaxAngleX={5}
+            tiltMaxAngleY={5}
+            scale={1.02}
+            transitionSpeed={1000}
+            glareEnable={true}
+            glareMaxOpacity={0.1}
+            glareColor="#ffffff"
+            glarePosition="all"
+          >
+            <div className="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 h-full">
+              <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-center text-indigo-600 dark:text-indigo-400">
+                {SkillsInfo[1].title}
+              </h3>
+              <Marquee
+                pauseOnHover={true}
+                speed={35}
+                direction="left"
+                gradient={true}
+                gradientColor={[255, 255, 255]}
+                gradientWidth={100}
+                autoFill={true}
+              >
+                {SkillsInfo[1].skills.map(({ name, logo }) => (
+                  <motion.div
+                    key={name}
+                    className="flex flex-col items-center mx-4 cursor-pointer group"
+                    whileHover={{ scale: 1.1, y: -5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-100 to-blue-100 dark:from-indigo-900/30 dark:to-blue-900/30 border-2 border-indigo-200 dark:border-indigo-800 flex items-center justify-center shadow-lg group-hover:bg-indigo-500 dark:group-hover:bg-indigo-600 group-hover:border-indigo-500 transition-all duration-300">
+                      <img
+                        src={logo}
+                        alt={name}
+                        className="w-8 h-8 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300"
+                      />
+                    </div>
+                    <span className="text-xs font-medium text-gray-600 dark:text-gray-400 mt-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">
+                      {name}
+                    </span>
+                  </motion.div>
+                ))}
+              </Marquee>
+            </div>
+          </Tilt>
+        </motion.div>
 
-        {/* Third Card - Half Width */}
-        <Tilt
-          tiltMaxAngleX={10}
-          tiltMaxAngleY={10}
-          scale={1.05}
-          transitionSpeed={500}
+        {/* Tools & Others Card */}
+        <motion.div
+          initial={{ opacity: 0, x: 50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
         >
-          <div className="bg-white dark:bg-gray-800 rounded-3xl p-4 shadow-lg border border-gray-300 dark:border-gray-700 h-full">
-            <h3 className="text-2xl md:text-3xl font-semibold mb-3 text-center text-indigo-600 dark:text-indigo-400">
-              {SkillsInfo[2].title}
-            </h3>
-            <Marquee
-              pauseOnHover={true}
-              speed={50}
-              gradient={false}
-              autoFill={true}
-            >
-              {SkillsInfo[2].skills.map(({ name, logo }) => (
-                <motion.a
-                  key={name}
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center p-3 w-14 h-14 rounded-full cursor-pointer bg-gray-900 border-2 border-indigo-500 shadow-[0_0_15px_rgba(99,102,241,0.8)] transition-transform duration-200 mr-6" // Using mr-6 for spacing
-                  whileHover={{ scale: 1.01 }}
-                >
-                  <img
-                    src={logo}
-                    alt={name}
-                    className="w-8 h-8 object-contain"
-                  />
-                </motion.a>
-              ))}
-            </Marquee>
-          </div>
-        </Tilt>
+          <Tilt
+            tiltMaxAngleX={5}
+            tiltMaxAngleY={5}
+            scale={1.02}
+            transitionSpeed={1000}
+            glareEnable={true}
+            glareMaxOpacity={0.1}
+            glareColor="#ffffff"
+            glarePosition="all"
+          >
+            <div className="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 h-full">
+              <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-center text-indigo-600 dark:text-indigo-400">
+                {SkillsInfo[2].title}
+              </h3>
+              <Marquee
+                pauseOnHover={true}
+                speed={30}
+                gradient={true}
+                gradientColor={[255, 255, 255]}
+                gradientWidth={100}
+                autoFill={true}
+              >
+                {SkillsInfo[2].skills.map(({ name, logo }) => (
+                  <motion.div
+                    key={name}
+                    className="flex flex-col items-center mx-4 cursor-pointer group"
+                    whileHover={{ scale: 1.1, y: -5 }}
+                    transition={{ type: "spring", stiffness: 300 }}
+                  >
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900/30 dark:to-purple-900/30 border-2 border-indigo-200 dark:border-indigo-800 flex items-center justify-center shadow-lg group-hover:bg-indigo-500 dark:group-hover:bg-indigo-600 group-hover:border-indigo-500 transition-all duration-300">
+                      <img
+                        src={logo}
+                        alt={name}
+                        className="w-8 h-8 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300"
+                      />
+                    </div>
+                    <span className="text-xs font-medium text-gray-600 dark:text-gray-400 mt-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">
+                      {name}
+                    </span>
+                  </motion.div>
+                ))}
+              </Marquee>
+            </div>
+          </Tilt>
+        </motion.div>
       </div>
     </section>
   );
