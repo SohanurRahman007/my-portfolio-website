@@ -242,7 +242,7 @@ const Banner = () => {
           </div>
         </motion.div>
 
-        {/* Right: Profile Image with Perfect Orbiting Icons */}
+        {/* Right: Profile Image with Perfect Orbiting Icon's */}
         <motion.div
           initial={{ x: 80, opacity: 0, scale: 0.8 }}
           animate={{ x: 0, opacity: 1, scale: 1 }}
@@ -266,7 +266,7 @@ const Banner = () => {
                   className="w-full h-full object-cover"
                 />
 
-                {/* Hint text when not hovering */}
+                {/* Hint text when not hovering effect */}
                 {!shouldShowIcons && (
                   <div className="absolute inset-0 flex items-end justify-center pb-4 lg:pb-6">
                     <motion.div
@@ -280,7 +280,7 @@ const Banner = () => {
                 )}
               </div>
 
-              {/* Perfectly Balanced Orbiting Tech Icons */}
+              {/* Perfectly Balanced Orbiting Tech Icon's */}
               {techIcons.map((tech, index) => {
                 const totalIcons = techIcons.length;
                 const angle = (index / totalIcons) * 2 * Math.PI;
