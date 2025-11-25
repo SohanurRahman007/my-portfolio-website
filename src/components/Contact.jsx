@@ -133,7 +133,7 @@ const Contact = () => {
 
   return (
     <section id="contact" className="pt-16 px-4">
-      <div className="text-center mb-8">
+      <div className="text-center mb-4">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -148,7 +148,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
           viewport={{ once: true }}
-          className="w-24 h-1 bg-indigo-500 mx-auto mt-3 mb-4"
+          className="w-24 h-1 bg-indigo-500 mx-auto mt-3 mb-2"
         ></motion.div>
         <motion.p
           initial={{ opacity: 0, y: 20 }}
