@@ -1,11 +1,5 @@
 import React, { useState } from "react";
-import {
-  FaEnvelope,
-  FaWhatsapp,
-  FaLinkedin,
-  FaFacebook,
-  FaSync,
-} from "react-icons/fa";
+import { FaEnvelope, FaWhatsapp, FaLinkedin, FaFacebook } from "react-icons/fa";
 import emailjs from "@emailjs/browser";
 import toast, { Toaster } from "react-hot-toast";
 import { motion } from "framer-motion";
@@ -17,7 +11,6 @@ const Contact = () => {
     message: "",
   });
   const [loading, setLoading] = useState(false);
-  const [testing, setTesting] = useState(false);
 
   // EmailJS configuration
   const emailConfig = {
@@ -28,55 +21,6 @@ const Contact = () => {
 
   const handleChange = (e) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
-  };
-
-  // Test email service function
-  const testEmailService = async () => {
-    setTesting(true);
-
-    const testParams = {
-      to_name: "Sohanur Rahman",
-      from_name: "Test User",
-      from_email: "test@example.com",
-      message:
-        "This is a test message from your contact form to verify EmailJS is working.",
-      reply_to: "test@example.com",
-    };
-
-    try {
-      const response = await emailjs.send(
-        emailConfig.serviceID,
-        emailConfig.templateID,
-        testParams,
-        emailConfig.publicKey
-      );
-      toast.success("✓ Email service test successful!");
-      console.log("Test email sent:", response);
-    } catch (error) {
-      console.error("EmailJS Test Error:", error);
-
-      if (error.text?.includes("Invalid grant") || error.status === 412) {
-        toast.error(
-          <div>
-            ❌ Gmail connection expired.
-            <br />
-            <a
-              href="https://dashboard.emailjs.com/admin"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="underline font-semibold"
-            >
-              Reconnect Gmail in EmailJS dashboard
-            </a>
-          </div>,
-          { duration: 10000 }
-        );
-      } else {
-        toast.error(`Test failed: ${error.text || "Unknown error"}`);
-      }
-    } finally {
-      setTesting(false);
-    }
   };
 
   const handleSubmit = async (e) => {
@@ -106,7 +50,7 @@ const Contact = () => {
       );
 
       console.log("Email sent successfully!", response);
-      toast.success("🎉 Message sent successfully!");
+      toast.success("Message sent successfully!");
       setFormData({ name: "", email: "", message: "" });
     } catch (error) {
       console.error("EmailJS Error:", error);
@@ -115,14 +59,16 @@ const Contact = () => {
       if (error.text?.includes("Invalid grant") || error.status === 412) {
         toast.error(
           <div>
-            ❌ Email service needs reconnection.
+            Email service needs reconnection.
             <br />
-            <button
-              onClick={testEmailService}
-              className="underline font-semibold mt-1"
+            <a
+              href="https://dashboard.emailjs.com/admin"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline font-semibold"
             >
-              Check service status
-            </button>
+              Reconnect in EmailJS dashboard
+            </a>
           </div>,
           { duration: 8000 }
         );
@@ -213,119 +159,105 @@ const Contact = () => {
         >
           Send me a message or reach out through social links!
         </motion.p>
-
-        {/* Service Status Check */}
-        <motion.div
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6, delay: 0.3 }}
-          viewport={{ once: true }}
-          className="mt-4"
-        >
-          <button
-            onClick={testEmailService}
-            disabled={testing}
-            className="inline-flex items-center gap-2 px-4 py-2 bg-green-500 hover:bg-green-600 text-white rounded-lg transition disabled:opacity-50 text-sm"
-          >
-            <FaSync className={testing ? "animate-spin" : ""} />
-            {testing ? "Testing..." : "Test Email Service"}
-          </button>
-        </motion.div>
       </div>
 
-      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8">
-        {/* Contact Form */}
+      <div className="max-w-7xl mx-auto flex flex-col lg:flex-row gap-8 items-stretch">
+        {/* Contact Form - Left Side */}
         <motion.div
           initial={{ x: -50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="w-full lg:w-1/2"
+          className="w-full lg:w-1/2 flex"
         >
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 h-fit shadow-sm">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 shadow-sm w-full flex flex-col">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Send a Message
             </h3>
 
-            <form onSubmit={handleSubmit}>
-              <div className="mb-6">
-                <label className="block text-gray-700 dark:text-gray-300 mb-3 font-semibold">
-                  Your Name
-                </label>
-                <input
-                  type="text"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition placeholder-gray-500 dark:placeholder-gray-400"
-                  placeholder="Enter your name"
-                  required
-                />
+            <form onSubmit={handleSubmit} className="flex-1 flex flex-col">
+              <div className="space-y-6 flex-1">
+                <div>
+                  <label className="block text-gray-700 dark:text-gray-300 mb-3 font-semibold">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition placeholder-gray-500 dark:placeholder-gray-400"
+                    placeholder="Enter your name"
+                    required
+                  />
+                </div>
+
+                <div>
+                  <label className="block text-gray-700 dark:text-gray-300 mb-3 font-semibold">
+                    Your Email
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition placeholder-gray-500 dark:placeholder-gray-400"
+                    placeholder="Enter your email"
+                    required
+                  />
+                </div>
+
+                <div className="flex-1 flex flex-col">
+                  <label className="block text-gray-700 dark:text-gray-300 mb-3 font-semibold">
+                    Your Message
+                  </label>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    rows={5}
+                    className="w-full flex-1 px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition placeholder-gray-500 dark:placeholder-gray-400 resize-none"
+                    placeholder="Write your message here..."
+                    required
+                  />
+                </div>
               </div>
 
-              <div className="mb-6">
-                <label className="block text-gray-700 dark:text-gray-300 mb-3 font-semibold">
-                  Your Email
-                </label>
-                <input
-                  type="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition placeholder-gray-500 dark:placeholder-gray-400"
-                  placeholder="Enter your email"
-                  required
-                />
+              <div className="mt-6">
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="w-full bg-indigo-500 hover:bg-indigo-600 cursor-pointer text-white py-3 rounded-xl font-bold transition disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg"
+                >
+                  {loading ? (
+                    <span className="flex items-center justify-center">
+                      <svg
+                        className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                      >
+                        <circle
+                          className="opacity-25"
+                          cx="12"
+                          cy="12"
+                          r="10"
+                          stroke="currentColor"
+                          strokeWidth="4"
+                        ></circle>
+                        <path
+                          className="opacity-75"
+                          fill="currentColor"
+                          d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                        ></path>
+                      </svg>
+                      Sending...
+                    </span>
+                  ) : (
+                    "Send Message"
+                  )}
+                </button>
               </div>
-
-              <div className="mb-6">
-                <label className="block text-gray-700 dark:text-gray-300 mb-3 font-semibold">
-                  Your Message
-                </label>
-                <textarea
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  rows={5}
-                  className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition placeholder-gray-500 dark:placeholder-gray-400 resize-vertical"
-                  placeholder="Write your message here..."
-                  required
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={loading}
-                className="w-full bg-indigo-500 hover:bg-indigo-600 cursor-pointer text-white py-3 rounded-xl font-bold transition disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg mb-3"
-              >
-                {loading ? (
-                  <span className="flex items-center justify-center">
-                    <svg
-                      className="animate-spin -ml-1 mr-3 h-5 w-5 text-white"
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                    >
-                      <circle
-                        className="opacity-25"
-                        cx="12"
-                        cy="12"
-                        r="10"
-                        stroke="currentColor"
-                        strokeWidth="4"
-                      ></circle>
-                      <path
-                        className="opacity-75"
-                        fill="currentColor"
-                        d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                      ></path>
-                    </svg>
-                    Sending...
-                  </span>
-                ) : (
-                  "Send Message"
-                )}
-              </button>
             </form>
 
             <div className="mt-6 p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
@@ -342,20 +274,20 @@ const Contact = () => {
           </div>
         </motion.div>
 
-        {/* Contact Cards */}
+        {/* Contact Cards - Right Side */}
         <motion.div
           initial={{ x: 50, opacity: 0 }}
           whileInView={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="w-full lg:w-1/2"
+          className="w-full lg:w-1/2 flex"
         >
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 h-fit shadow-sm">
+          <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 shadow-sm w-full flex flex-col">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
               Connect With Me
             </h3>
 
-            <div className="grid grid-cols-1 gap-4">
+            <div className="grid grid-cols-1 gap-4 flex-1">
               {contactCards.map((card, i) => (
                 <motion.a
                   key={i}
@@ -364,7 +296,7 @@ const Contact = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="bg-white dark:bg-gray-700 rounded-xl p-5 flex items-center gap-4 border border-gray-200 dark:border-gray-600 hover:shadow-md transition-all duration-300 cursor-pointer group"
+                  className="bg-white dark:bg-gray-700 rounded-xl p-5 flex items-center gap-4 border border-gray-200 dark:border-gray-600 hover:shadow-md transition-all duration-300 cursor-pointer group flex-1"
                 >
                   <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-gray-50 dark:bg-gray-600 rounded-lg group-hover:scale-110 transition-transform duration-300">
                     {card.icon}
@@ -379,6 +311,17 @@ const Contact = () => {
                   </div>
                 </motion.a>
               ))}
+            </div>
+
+            {/* Additional Info Section */}
+            <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
+              <h4 className="font-semibold text-blue-900 dark:text-blue-100 mb-2">
+                Quick Response Guaranteed
+              </h4>
+              <p className="text-sm text-blue-800 dark:text-blue-200">
+                I typically respond within 2-4 hours during business days. Feel
+                free to reach out through any platform!
+              </p>
             </div>
           </div>
         </motion.div>
