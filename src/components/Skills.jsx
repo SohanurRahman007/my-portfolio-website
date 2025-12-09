@@ -116,11 +116,11 @@ const SkillsInfo = [
 const Skills = () => {
   return (
     <section id="skills" className="pt-10 px-4">
-      <h2 className="text-2xl md:text-3xl font-extrabold text-center text-gray-900 dark:text-white tracking-wide">
+      <h2 className="text-2xl md:text-3xl font-extrabold text-center text-white tracking-wide">
         Skills
       </h2>
       <div className="w-24 h-1 bg-indigo-500 mx-auto mt-2"></div>
-      <p className="text-gray-600 dark:text-gray-300 mt-2 text-lg max-w-xl mx-auto text-center mb-4">
+      <p className="text-gray-300 mt-2 text-lg max-w-xl mx-auto text-center mb-4">
         The languages, frameworks, and tools that I trust to build fast, modern,
         and secure web solutions
       </p>
@@ -144,8 +144,8 @@ const Skills = () => {
             glareColor="#ffffff"
             glarePosition="all"
           >
-            <div className="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-all duration-500">
-              <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-center text-indigo-600 dark:text-indigo-400">
+            <div className="bg-gray-800 rounded-3xl p-6 shadow-xl border border-gray-700 hover:shadow-2xl transition-all duration-500">
+              <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-center text-indigo-400">
                 {SkillsInfo[0].title}
               </h3>
               <Marquee
@@ -153,7 +153,7 @@ const Skills = () => {
                 speed={40}
                 direction="right"
                 gradient={true}
-                gradientColor={[255, 255, 255]}
+                gradientColor={[30, 30, 30]}
                 gradientWidth={100}
                 autoFill={true}
               >
@@ -164,14 +164,14 @@ const Skills = () => {
                     whileHover={{ scale: 1.1, y: -5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900/30 dark:to-purple-900/30 border-2 border-indigo-200 dark:border-indigo-800 flex items-center justify-center shadow-lg group-hover:bg-indigo-500 dark:group-hover:bg-indigo-600 group-hover:border-indigo-500 transition-all duration-300">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-900/30 to-purple-900/30 border-2 border-indigo-800 flex items-center justify-center shadow-lg group-hover:bg-indigo-600 group-hover:border-indigo-500 transition-all duration-300">
                       <img
                         src={logo}
                         alt={name}
                         className="w-8 h-8 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300"
                       />
                     </div>
-                    <span className="text-xs font-medium text-gray-600 dark:text-gray-400 mt-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">
+                    <span className="text-xs font-medium text-gray-400 mt-2 group-hover:text-indigo-400 transition-colors duration-300">
                       {name}
                     </span>
                   </motion.div>
@@ -198,8 +198,8 @@ const Skills = () => {
             glareColor="#ffffff"
             glarePosition="all"
           >
-            <div className="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 h-full">
-              <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-center text-indigo-600 dark:text-indigo-400">
+            <div className="bg-gray-800 rounded-3xl p-6 shadow-xl border border-gray-700 hover:shadow-2xl transition-all duration-500 h-full">
+              <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-center text-indigo-400">
                 {SkillsInfo[1].title}
               </h3>
               <Marquee
@@ -207,7 +207,7 @@ const Skills = () => {
                 speed={35}
                 direction="left"
                 gradient={true}
-                gradientColor={[255, 255, 255]}
+                gradientColor={[30, 30, 30]}
                 gradientWidth={100}
                 autoFill={true}
               >
@@ -218,14 +218,14 @@ const Skills = () => {
                     whileHover={{ scale: 1.1, y: -5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-100 to-blue-100 dark:from-indigo-900/30 dark:to-blue-900/30 border-2 border-indigo-200 dark:border-indigo-800 flex items-center justify-center shadow-lg group-hover:bg-indigo-500 dark:group-hover:bg-indigo-600 group-hover:border-indigo-500 transition-all duration-300">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-900/30 to-blue-900/30 border-2 border-indigo-800 flex items-center justify-center shadow-lg group-hover:bg-indigo-600 group-hover:border-indigo-500 transition-all duration-300">
                       <img
                         src={logo}
                         alt={name}
                         className="w-8 h-8 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300"
                       />
                     </div>
-                    <span className="text-xs font-medium text-gray-600 dark:text-gray-400 mt-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">
+                    <span className="text-xs font-medium text-gray-400 mt-2 group-hover:text-indigo-400 transition-colors duration-300">
                       {name}
                     </span>
                   </motion.div>
@@ -252,15 +252,15 @@ const Skills = () => {
             glareColor="#ffffff"
             glarePosition="all"
           >
-            <div className="bg-white dark:bg-gray-800 rounded-3xl p-6 shadow-xl border border-gray-200 dark:border-gray-700 hover:shadow-2xl transition-all duration-500 h-full">
-              <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-center text-indigo-600 dark:text-indigo-400">
+            <div className="bg-gray-800 rounded-3xl p-6 shadow-xl border border-gray-700 hover:shadow-2xl transition-all duration-500 h-full">
+              <h3 className="text-2xl md:text-3xl font-semibold mb-6 text-center text-indigo-400">
                 {SkillsInfo[2].title}
               </h3>
               <Marquee
                 pauseOnHover={true}
                 speed={30}
                 gradient={true}
-                gradientColor={[255, 255, 255]}
+                gradientColor={[30, 30, 30]}
                 gradientWidth={100}
                 autoFill={true}
               >
@@ -271,14 +271,14 @@ const Skills = () => {
                     whileHover={{ scale: 1.1, y: -5 }}
                     transition={{ type: "spring", stiffness: 300 }}
                   >
-                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-100 to-purple-100 dark:from-indigo-900/30 dark:to-purple-900/30 border-2 border-indigo-200 dark:border-indigo-800 flex items-center justify-center shadow-lg group-hover:bg-indigo-500 dark:group-hover:bg-indigo-600 group-hover:border-indigo-500 transition-all duration-300">
+                    <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-900/30 to-purple-900/30 border-2 border-indigo-800 flex items-center justify-center shadow-lg group-hover:bg-indigo-600 group-hover:border-indigo-500 transition-all duration-300">
                       <img
                         src={logo}
                         alt={name}
                         className="w-8 h-8 object-contain group-hover:brightness-0 group-hover:invert transition-all duration-300"
                       />
                     </div>
-                    <span className="text-xs font-medium text-gray-600 dark:text-gray-400 mt-2 group-hover:text-indigo-600 dark:group-hover:text-indigo-400 transition-colors duration-300">
+                    <span className="text-xs font-medium text-gray-400 mt-2 group-hover:text-indigo-400 transition-colors duration-300">
                       {name}
                     </span>
                   </motion.div>
