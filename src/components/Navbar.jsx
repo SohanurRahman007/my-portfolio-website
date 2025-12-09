@@ -67,9 +67,10 @@ const Navbar = () => {
       initial={{ y: -100, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ type: "spring", stiffness: 100 }}
+      // Using dark mode colors only for both modes
       className={`fixed top-0 w-full z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white/80 dark:bg-gray-900/80 backdrop-blur-md shadow-md"
+          ? "bg-gray-900/80 backdrop-blur-md shadow-md" // Only dark colors
           : "bg-transparent"
       }`}
     >
@@ -91,7 +92,7 @@ const Navbar = () => {
         </Link>
 
         {/* Desktop Menu */}
-        <ul className="hidden md:flex gap-4 text-gray-700 dark:text-gray-200 font-medium">
+        <ul className="hidden md:flex gap-4 text-gray-200 font-medium">
           {navLinks.map(({ id, name, to, icon: Icon }) => (
             <li key={id}>
               <Link
@@ -103,8 +104,8 @@ const Navbar = () => {
                 onSetActive={() => setActiveSection(to)}
                 className={`cursor-pointer transition flex items-center gap-2 px-4 py-2 rounded-lg relative ${
                   isActive(to)
-                    ? "text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30 font-semibold"
-                    : "text-gray-600 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+                    ? "text-indigo-400 bg-indigo-900/30 font-semibold"
+                    : "text-gray-300 hover:text-indigo-400 hover:bg-gray-800"
                 }`}
               >
                 <Icon className="text-lg" />
@@ -123,8 +124,7 @@ const Navbar = () => {
 
         {/* Actions */}
         <div className="flex items-center gap-4">
-          {/* Rewards Button with Enhanced Infinity Border Animation & Glow */}
-          {/* Rewards Button with Minimal Border Animation */}
+          {/* Rewards Button */}
           <a
             href="https://drive.google.com/file/d/1aKTHKEwD_cQZu9RgoASKgrY99KLWiQyg/view?usp=sharing"
             target="_blank"
@@ -152,7 +152,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="text-2xl text-gray-700 dark:text-white md:hidden"
+            className="text-2xl text-white md:hidden"
           >
             {menuOpen ? <FaTimes /> : <FaBars />}
           </button>
@@ -165,7 +165,7 @@ const Navbar = () => {
           initial={{ opacity: 0, y: -20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.2 }}
-          className="md:hidden px-6 py-4 bg-white dark:bg-gray-900 border-t shadow flex flex-col gap-3"
+          className="md:hidden px-6 py-4 bg-gray-900 border-t border-gray-800 shadow flex flex-col gap-3"
         >
           {navLinks.map(({ id, name, to, icon: Icon }) => (
             <li key={id}>
@@ -179,8 +179,8 @@ const Navbar = () => {
                 onClick={() => setMenuOpen(false)}
                 className={`block font-medium transition flex items-center gap-3 px-4 py-3 rounded-lg ${
                   isActive(to)
-                    ? "text-indigo-600 dark:text-indigo-400 bg-indigo-50 dark:bg-indigo-900/30 font-semibold border-l-4 border-indigo-500"
-                    : "text-gray-700 dark:text-gray-200 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-gray-100 dark:hover:bg-gray-800"
+                    ? "text-indigo-400 bg-indigo-900/30 font-semibold border-l-4 border-indigo-500"
+                    : "text-gray-200 hover:text-indigo-400 hover:bg-gray-800"
                 }`}
               >
                 <Icon className="text-xl" />
@@ -189,12 +189,12 @@ const Navbar = () => {
             </li>
           ))}
           <li className="mt-2">
-            {/* Rewards Button with Infinity Border Animation */}
+            {/* Mobile Rewards Button */}
             <a
               href="https://drive.google.com/file/d/1aKTHKEwD_cQZu9RgoASKgrY99KLWiQyg/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden md:flex px-6 py-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-full items-center gap-2 shadow-lg font-medium transition-colors duration-300 relative overflow-hidden"
+              className="flex px-6 py-2 bg-indigo-500 hover:bg-indigo-600 text-white rounded-full items-center gap-2 shadow-lg font-medium transition-colors duration-300 relative overflow-hidden"
               style={{
                 border: "2px solid transparent",
                 backgroundImage:
@@ -207,15 +207,15 @@ const Navbar = () => {
               <FaAward className="text-lg" />
               <span>Rewards</span>
               <style>{`
-              @keyframes borderRotate {
-                0% {
-                  background-position: 0% 0%, 0% 0%;
+                @keyframes borderRotate {
+                  0% {
+                    background-position: 0% 0%, 0% 0%;
+                  }
+                  100% {
+                    background-position: 0% 0%, 400% 0%;
+                  }
                 }
-                100% {
-                  background-position: 0% 0%, 400% 0%;
-                }
-              }
-            `}</style>
+              `}</style>
             </a>
           </li>
         </motion.ul>
