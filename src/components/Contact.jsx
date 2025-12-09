@@ -98,33 +98,25 @@ const Contact = () => {
 
   const contactCards = [
     {
-      icon: (
-        <FaLinkedin className="text-blue-600 dark:text-blue-400 text-2xl" />
-      ),
+      icon: <FaLinkedin className="text-blue-400 text-2xl" />,
       title: "LinkedIn",
       value: "LinkedIn",
       link: "https://www.linkedin.com/in/sohanurrahman007",
     },
     {
-      icon: (
-        <FaFacebook className="text-blue-600 dark:text-blue-400 text-2xl" />
-      ),
+      icon: <FaFacebook className="text-blue-400 text-2xl" />,
       title: "Facebook",
       value: "Facebook",
       link: "https://www.facebook.com/SohanurRahman0007",
     },
     {
-      icon: (
-        <FaEnvelope className="text-indigo-600 dark:text-indigo-400 text-2xl" />
-      ),
+      icon: <FaEnvelope className="text-indigo-400 text-2xl" />,
       title: "Email",
       value: "sohanuractive007@gmail.com",
       link: "mailto:sohanuractive007@gmail.com",
     },
     {
-      icon: (
-        <FaWhatsapp className="text-green-600 dark:text-green-400 text-2xl" />
-      ),
+      icon: <FaWhatsapp className="text-green-400 text-2xl" />,
       title: "WhatsApp",
       value: "+8801889794766",
       link: "https://wa.me/8801889794766",
@@ -139,7 +131,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          className="text-3xl md:text-4xl font-bold text-gray-900 dark:text-white"
+          className="text-3xl md:text-4xl font-bold text-white"
         >
           Get In Touch
         </motion.h2>
@@ -155,7 +147,7 @@ const Contact = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
           viewport={{ once: true }}
-          className="text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto"
+          className="text-gray-300 text-lg max-w-2xl mx-auto"
         >
           Send me a message or reach out through social links!
         </motion.p>
@@ -170,15 +162,15 @@ const Contact = () => {
           viewport={{ once: true }}
           className="w-full lg:w-1/2 flex"
         >
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 shadow-sm w-full flex flex-col">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+          <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700 shadow-sm w-full flex flex-col">
+            <h3 className="text-2xl font-bold text-white mb-6">
               Send a Message
             </h3>
 
             <form onSubmit={handleSubmit} className="flex-1 flex flex-col">
               <div className="space-y-6 flex-1">
                 <div>
-                  <label className="block text-gray-700 dark:text-gray-300 mb-3 font-semibold">
+                  <label className="block text-gray-300 mb-3 font-semibold">
                     Your Name
                   </label>
                   <input
@@ -186,14 +178,14 @@ const Contact = () => {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition placeholder-gray-500 dark:placeholder-gray-400"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-gray-700 text-white transition placeholder-gray-400"
                     placeholder="Enter your name"
                     required
                   />
                 </div>
 
                 <div>
-                  <label className="block text-gray-700 dark:text-gray-300 mb-3 font-semibold">
+                  <label className="block text-gray-300 mb-3 font-semibold">
                     Your Email
                   </label>
                   <input
@@ -201,14 +193,14 @@ const Contact = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    className="w-full px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition placeholder-gray-500 dark:placeholder-gray-400"
+                    className="w-full px-4 py-3 rounded-xl border border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-gray-700 text-white transition placeholder-gray-400"
                     placeholder="Enter your email"
                     required
                   />
                 </div>
 
                 <div className="flex-1 flex flex-col">
-                  <label className="block text-gray-700 dark:text-gray-300 mb-3 font-semibold">
+                  <label className="block text-gray-300 mb-3 font-semibold">
                     Your Message
                   </label>
                   <textarea
@@ -216,7 +208,7 @@ const Contact = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={5}
-                    className="w-full flex-1 px-4 py-3 rounded-xl border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-white dark:bg-gray-700 text-gray-900 dark:text-white transition placeholder-gray-500 dark:placeholder-gray-400 resize-none"
+                    className="w-full flex-1 px-4 py-3 rounded-xl border border-gray-600 focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 bg-gray-700 text-white transition placeholder-gray-400 resize-none"
                     placeholder="Write your message here..."
                     required
                   />
@@ -260,12 +252,12 @@ const Contact = () => {
               </div>
             </form>
 
-            <div className="mt-6 p-4 bg-amber-50 dark:bg-amber-900/20 rounded-lg border border-amber-200 dark:border-amber-800">
-              <p className="text-sm text-amber-800 dark:text-amber-200 text-center">
+            <div className="mt-6 p-4 bg-amber-900/20 rounded-lg border border-amber-800">
+              <p className="text-sm text-amber-200 text-center">
                 If the form doesn't work, please email me directly at{" "}
                 <a
                   href="mailto:sohanuractive007@gmail.com"
-                  className="font-semibold underline hover:text-amber-900 dark:hover:text-amber-100"
+                  className="font-semibold underline hover:text-amber-100"
                 >
                   sohanuractive007@gmail.com
                 </a>
@@ -282,8 +274,8 @@ const Contact = () => {
           viewport={{ once: true }}
           className="w-full lg:w-1/2 flex"
         >
-          <div className="bg-white dark:bg-gray-800 rounded-2xl p-8 border border-gray-200 dark:border-gray-700 shadow-sm w-full flex flex-col">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
+          <div className="bg-gray-800 rounded-2xl p-8 border border-gray-700 shadow-sm w-full flex flex-col">
+            <h3 className="text-2xl font-bold text-white mb-6">
               Connect With Me
             </h3>
 
@@ -296,16 +288,16 @@ const Contact = () => {
                   rel="noopener noreferrer"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="bg-white dark:bg-gray-700 rounded-xl p-5 flex items-center gap-4 border border-gray-200 dark:border-gray-600 hover:shadow-md transition-all duration-300 cursor-pointer group flex-1"
+                  className="bg-gray-700 rounded-xl p-5 flex items-center gap-4 border border-gray-600 hover:shadow-md transition-all duration-300 cursor-pointer group flex-1"
                 >
-                  <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-gray-50 dark:bg-gray-600 rounded-lg group-hover:scale-110 transition-transform duration-300">
+                  <div className="flex-shrink-0 w-12 h-12 flex items-center justify-center bg-gray-600 rounded-lg group-hover:scale-110 transition-transform duration-300">
                     {card.icon}
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-sm font-semibold text-gray-500 dark:text-gray-400 mb-1">
+                    <p className="text-sm font-semibold text-gray-400 mb-1">
                       {card.title}
                     </p>
-                    <p className="text-base text-gray-800 dark:text-white font-medium truncate">
+                    <p className="text-base text-white font-medium truncate">
                       {card.value}
                     </p>
                   </div>
@@ -314,11 +306,11 @@ const Contact = () => {
             </div>
 
             {/* Additional Info Section */}
-            <div className="mt-6 p-4 bg-blue-50 dark:bg-blue-900/20 rounded-lg border border-blue-200 dark:border-blue-800">
-              <h4 className="font-semibold text-blue-900 dark:text-blue-100 mb-2">
+            <div className="mt-6 p-4 bg-blue-900/20 rounded-lg border border-blue-800">
+              <h4 className="font-semibold text-blue-100 mb-2">
                 Quick Response Guaranteed
               </h4>
-              <p className="text-sm text-blue-800 dark:text-blue-200">
+              <p className="text-sm text-blue-200">
                 I typically respond within 2-4 hours during business days. Feel
                 free to reach out through any platform!
               </p>
