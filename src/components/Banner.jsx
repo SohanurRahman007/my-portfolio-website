@@ -124,16 +124,14 @@ const Banner = () => {
               Hello, I'm{" "}
             </span>
             <br />
-            <span className="text-indigo-700 dark:text-white">
-              Sohanur Rahman
-            </span>
+            <span className="text-white">Sohanur Rahman</span>
           </h1>
 
           <div className="mb-6">
-            <h2 className="text-xl md:text-2xl text-indigo-600 dark:text-indigo-400 font-semibold mb-2">
+            <h2 className="text-xl md:text-2xl text-indigo-400 font-semibold mb-2">
               Full Stack Developer
             </h2>
-            <div className="text-lg md:text-xl text-indigo-500 dark:text-indigo-300 font-medium">
+            <div className="text-lg md:text-xl text-indigo-300 font-medium">
               <TypeAnimation
                 sequence={[
                   "React.js | Next.js Developer",
@@ -152,27 +150,15 @@ const Banner = () => {
             </div>
           </div>
 
-          <p className="text-indigo-600 dark:text-gray-300 max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed text-lg">
+          <p className="text-gray-300 max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed text-lg">
             Passionate Junior Full-Stack Developer skilled in{" "}
-            <strong className="text-indigo-700 dark:text-indigo-400">
-              React.js
-            </strong>
-            ,{" "}
-            <strong className="text-indigo-700 dark:text-indigo-400">
-              Node.js
-            </strong>
-            ,
-            <strong className="text-indigo-700 dark:text-indigo-400">
-              {" "}
-              MongoDB
-            </strong>
-            , and{" "}
-            <strong className="text-indigo-700 dark:text-indigo-400">
-              Next.js
-            </strong>
-            . I love creating smooth, responsive, and secure web apps with
-            excellent user experiences. Excited to learn, grow, and build
-            awesome projects with creative teams.
+            <strong className="text-indigo-400">React.js</strong>,{" "}
+            <strong className="text-indigo-400">Node.js</strong>,
+            <strong className="text-indigo-400"> MongoDB</strong>, and{" "}
+            <strong className="text-indigo-400">Next.js</strong>. I love
+            creating smooth, responsive, and secure web apps with excellent user
+            experiences. Excited to learn, grow, and build awesome projects with
+            creative teams.
           </p>
 
           {/* CTA Buttons */}
@@ -183,19 +169,19 @@ const Banner = () => {
                 {
                   icon: FaGithub,
                   href: "https://github.com/SohanurRahman007",
-                  color: "hover:bg-indigo-100 dark:hover:bg-indigo-900",
+                  color: "hover:bg-indigo-900",
                   label: "GitHub",
                 },
                 {
                   icon: FaLinkedin,
                   href: "https://www.linkedin.com/in/sohanurrahman007",
-                  color: "hover:bg-indigo-100 dark:hover:bg-indigo-900",
+                  color: "hover:bg-indigo-900",
                   label: "LinkedIn",
                 },
                 {
                   icon: FaFacebook,
                   href: "https://www.facebook.com/SohanurRahman0007",
-                  color: "hover:bg-indigo-100 dark:hover:bg-indigo-900",
+                  color: "hover:bg-indigo-900",
                   label: "Facebook",
                 },
               ].map((social, index) => (
@@ -208,7 +194,7 @@ const Banner = () => {
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`w-12 h-12 rounded-full bg-white dark:bg-gray-800 shadow-md flex items-center justify-center text-indigo-600 dark:text-indigo-400 border border-indigo-200 dark:border-indigo-800 transition-all duration-300 ${social.color}`}
+                  className={`w-12 h-12 rounded-full bg-gray-800 shadow-md flex items-center justify-center text-indigo-400 border border-indigo-800 transition-all duration-300 ${social.color}`}
                   aria-label={social.label}
                 >
                   <social.icon className="text-lg" />
@@ -259,7 +245,7 @@ const Banner = () => {
             {/* Perfect Circle Container */}
             <div className="relative w-[300px] h-[300px] lg:w-[450px] lg:h-[450px] flex items-center justify-center rounded-full border border-transparent mx-auto">
               {/* Main Profile Image */}
-              <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-indigo-200 dark:border-indigo-800 shadow-2xl backdrop-blur-sm bg-gradient-to-br from-white/10 to-white/5 z-10">
+              <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-indigo-800 shadow-2xl backdrop-blur-sm bg-gradient-to-br from-gray-800/10 to-gray-800/5 z-10">
                 <img
                   src={profileImage}
                   alt="Sohanur Rahman - Full Stack Developer"
@@ -272,7 +258,7 @@ const Banner = () => {
                     <motion.div
                       initial={{ opacity: 0, y: 20 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="text-indigo-700 dark:text-indigo-300 text-xs lg:text-sm font-medium bg-white/80 dark:bg-gray-800/80 px-3 lg:px-4 py-1 lg:py-2 rounded-full backdrop-blur-sm border border-indigo-200 dark:border-indigo-800 text-center"
+                      className="text-indigo-300 text-xs lg:text-sm font-medium bg-gray-800/80 px-3 lg:px-4 py-1 lg:py-2 rounded-full backdrop-blur-sm border border-indigo-800 text-center"
                     >
                       {isMobile ? "Tap to see skills" : "Hover to see skills"}
                     </motion.div>
@@ -292,7 +278,7 @@ const Banner = () => {
                 return (
                   <motion.div
                     key={tech.name}
-                    className={`absolute w-10 h-10 lg:w-12 lg:h-12 rounded-full flex items-center justify-center border-2 border-indigo-200 dark:border-indigo-800 shadow-xl backdrop-blur-sm ${tech.bgColor} ${tech.color} z-20`}
+                    className={`absolute w-10 h-10 lg:w-12 lg:h-12 rounded-full flex items-center justify-center border-2 border-indigo-800 shadow-xl backdrop-blur-sm ${tech.bgColor} ${tech.color} z-20`}
                     initial={{
                       scale: 0,
                       opacity: 0,
@@ -358,15 +344,15 @@ const Banner = () => {
       <motion.div
         animate={{ y: [0, 10, 0] }}
         transition={{ duration: 2, repeat: Infinity }}
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-indigo-600 dark:text-indigo-400 hidden md:flex"
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-indigo-400 hidden md:flex"
       >
         <div className="flex flex-col items-center gap-2">
           <span className="text-sm">Scroll Down</span>
-          <div className="w-6 h-10 border-2 border-indigo-300 dark:border-indigo-700 rounded-full flex justify-center">
+          <div className="w-6 h-10 border-2 border-indigo-700 rounded-full flex justify-center">
             <motion.div
               animate={{ y: [0, 12, 0] }}
               transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-1 h-3 bg-indigo-500 dark:bg-indigo-400 rounded-full mt-2"
+              className="w-1 h-3 bg-indigo-400 rounded-full mt-2"
             ></motion.div>
           </div>
         </div>
