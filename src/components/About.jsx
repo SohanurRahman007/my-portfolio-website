@@ -25,11 +25,11 @@ const cardData = [
 const About = () => {
   return (
     <section id="about" className="pt-10 px-4">
-      <h2 className="text-2xl md:text-3xl font-extrabold text-center mb-2 text-gray-900 dark:text-white tracking-wide">
+      <h2 className="text-2xl md:text-3xl font-extrabold text-center mb-2 text-white tracking-wide">
         About Me
       </h2>
       <div className="w-24 h-1 bg-indigo-500 mx-auto mt-2"></div>
-      <p className="text-gray-600 dark:text-gray-300 mt-2 text-lg max-w-xl mx-auto text-center">
+      <p className="text-gray-300 mt-2 text-lg max-w-xl mx-auto text-center">
         I enjoy every part of the development process.
       </p>
       <div className="max-w-7xl mt-4 mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
@@ -48,7 +48,7 @@ const About = () => {
               y: -5,
               transition: { duration: 0.3 },
             }}
-            className="card card-compact bg-base-100 dark:bg-gray-800 shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out min-h-[250px] rounded-2xl border border-gray-200 dark:border-gray-700 group"
+            className="card card-compact bg-gray-800 shadow-xl hover:shadow-2xl transition-all duration-300 ease-in-out min-h-[250px] rounded-2xl border border-gray-700 group"
           >
             <div className="card-body flex flex-col justify-center px-8 py-8 text-center">
               {/* Icon with animation */}
@@ -56,15 +56,15 @@ const About = () => {
                 initial={{ scale: 0, rotate: -180 }}
                 whileInView={{ scale: 1, rotate: 0 }}
                 transition={{ delay: index * 0.2 + 0.3, type: "spring" }}
-                className="w-14 h-14 bg-indigo-100 dark:bg-indigo-900 rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:bg-indigo-500 transition-colors duration-300"
+                className="w-14 h-14 bg-indigo-900 rounded-2xl flex items-center justify-center mb-4 mx-auto group-hover:bg-indigo-500 transition-colors duration-300"
               >
-                <Icon className="text-2xl text-indigo-600 dark:text-indigo-400 group-hover:text-white transition-colors duration-300" />
+                <Icon className="text-2xl text-indigo-400 group-hover:text-white transition-colors duration-300" />
               </motion.div>
 
-              <h3 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-4">
+              <h3 className="text-2xl font-bold text-indigo-400 mb-4">
                 {title}
               </h3>
-              <p className="text-[17px] leading-relaxed text-gray-700 dark:text-gray-300 tracking-wide">
+              <p className="text-[17px] leading-relaxed text-gray-300 tracking-wide">
                 <span className="inline-block border-l-4 border-indigo-500 pl-4 text-left">
                   {content}
                 </span>
