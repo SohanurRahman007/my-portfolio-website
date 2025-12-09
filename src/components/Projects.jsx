@@ -150,11 +150,11 @@ const Projects = () => {
   return (
     <section id="projects" className="pt-16 px-4">
       <div className="text-center mb-6">
-        <h2 className="text-2xl md:text-3xl font-extrabold text-center text-gray-900 dark:text-white tracking-wide">
+        <h2 className="text-2xl md:text-3xl font-extrabold text-center text-white tracking-wide">
           Projects
         </h2>
         <div className="w-24 h-1 bg-indigo-500 mx-auto mt-2"></div>
-        <p className="text-gray-600 dark:text-gray-300 mt-2 text-lg max-w-xl mx-auto text-center">
+        <p className="text-gray-300 mt-2 text-lg max-w-xl mx-auto text-center">
           Explore my featured web applications and development work.
         </p>
       </div>
@@ -172,7 +172,7 @@ const Projects = () => {
             }}
             viewport={{ once: false }}
             onClick={() => setSelected(project)}
-            className="bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl cursor-pointer hover:scale-[1.03] transition-all duration-300 h-full relative"
+            className="bg-gray-800 border border-gray-700 rounded-2xl cursor-pointer hover:scale-[1.03] transition-all duration-300 h-full relative"
           >
             {/* Team Project Badge */}
             {project.isTeamProject && (
@@ -216,10 +216,10 @@ const Projects = () => {
             </Swiper>
 
             <div className="card-body px-8 py-8 flex flex-col justify-center text-center">
-              <h3 className="text-2xl font-bold text-indigo-600 dark:text-indigo-400 mb-4">
+              <h3 className="text-2xl font-bold text-indigo-400 mb-4">
                 {project.title}
               </h3>
-              <p className="text-[17px] leading-relaxed text-gray-700 dark:text-gray-300 tracking-wide text-left">
+              <p className="text-[17px] leading-relaxed text-gray-300 tracking-wide text-left">
                 <span className="inline-block border-l-4 border-indigo-500 pl-4">
                   {project.description}
                 </span>
@@ -228,7 +228,7 @@ const Projects = () => {
                 {project.tags.map((tag, i) => (
                   <span
                     key={i}
-                    className="bg-indigo-600/20 text-indigo-600 dark:text-indigo-400 text-xs px-3 py-1 rounded-full"
+                    className="bg-indigo-600/20 text-indigo-400 text-xs px-3 py-1 rounded-full"
                   >
                     {tag}
                   </span>
