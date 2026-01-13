@@ -151,14 +151,12 @@ const Banner = () => {
           </div>
 
           <p className="text-gray-300 max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed text-lg">
-            Passionate Junior Full-Stack Developer skilled in{" "}
-            <strong className="text-indigo-400">React.js</strong>,{" "}
-            <strong className="text-indigo-400">Node.js</strong>,
-            <strong className="text-indigo-400"> MongoDB</strong>, and{" "}
-            <strong className="text-indigo-400">Next.js</strong>. I love
-            creating smooth, responsive, and secure web apps with excellent user
-            experiences. Excited to learn, grow, and build awesome projects with
-            creative teams.
+            Frontend Developer with{" "}
+            <strong className="text-indigo-400">MERN stack</strong> expertise,
+            seeking to transition into
+            <strong className="text-indigo-400"> Full-Stack development</strong>
+            . Eager to contribute to scalable projects and grow into a technical{" "}
+            <strong className="text-indigo-400">leadership role</strong>.
           </p>
 
           {/* CTA Buttons */}
