@@ -128,8 +128,8 @@ const Banner = () => {
           </h1>
 
           <div className="mb-6">
-            <h2 className="text-xl md:text-2xl text-indigo-400 font-semibold mb-2">
-              Full Stack Developer
+            <h2 className="text-xl md:text-3xl text-white font-semibold mb-2">
+              MERN Stack Developer
             </h2>
             <div className="text-lg md:text-xl text-indigo-300 font-medium">
               <TypeAnimation
@@ -248,7 +248,7 @@ const Banner = () => {
               <div className="relative w-64 h-64 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-indigo-800 shadow-2xl backdrop-blur-sm bg-gradient-to-br from-gray-800/10 to-gray-800/5 z-10">
                 <img
                   src={profileImage}
-                  alt="Sohanur Rahman - Full Stack Developer"
+                  alt="Sohanur Rahman - MERN Stack Developer"
                   className="w-full h-full object-cover"
                 />
 
